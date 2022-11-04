@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		1F6CF79F291474D500AD28A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CF79E291474D500AD28A7 /* AppDelegate.swift */; };
 		1F6CF7A1291474D500AD28A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CF7A0291474D500AD28A7 /* SceneDelegate.swift */; };
-		1F6CF7A3291474D500AD28A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CF7A2291474D500AD28A7 /* ViewController.swift */; };
+		1F6CF7A3291474D500AD28A7 /* EpisodeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CF7A2291474D500AD28A7 /* EpisodeInfoViewController.swift */; };
 		1F6CF7A6291474D500AD28A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6CF7A4291474D500AD28A7 /* Main.storyboard */; };
 		1F6CF7A8291474D800AD28A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6CF7A7291474D800AD28A7 /* Assets.xcassets */; };
 		1F6CF7AB291474D800AD28A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6CF7A9291474D800AD28A7 /* LaunchScreen.storyboard */; };
+		1F6CF7B52914756200AD28A7 /* EpisodeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CF7B42914756100AD28A7 /* EpisodeInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F6CF79B291474D500AD28A7 /* TVmazeSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVmazeSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6CF79E291474D500AD28A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F6CF7A0291474D500AD28A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1F6CF7A2291474D500AD28A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F6CF7A2291474D500AD28A7 /* EpisodeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeInfoViewController.swift; sourceTree = "<group>"; };
 		1F6CF7A5291474D500AD28A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F6CF7A7291474D800AD28A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F6CF7AA291474D800AD28A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F6CF7AC291474D800AD28A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F6CF7B42914756100AD28A7 /* EpisodeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		1F6CF79D291474D500AD28A7 /* TVmazeSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				1F6CF79E291474D500AD28A7 /* AppDelegate.swift */,
-				1F6CF7A0291474D500AD28A7 /* SceneDelegate.swift */,
-				1F6CF7A2291474D500AD28A7 /* ViewController.swift */,
-				1F6CF7A4291474D500AD28A7 /* Main.storyboard */,
+				1F6CF7B729150B8E00AD28A7 /* App */,
+				1F6CF7B629150B7100AD28A7 /* ViewControllers */,
+				1F6CF7B829150B9800AD28A7 /* Models */,
+				1F6CF7B929150BA600AD28A7 /* Storyboards */,
 				1F6CF7A7291474D800AD28A7 /* Assets.xcassets */,
-				1F6CF7A9291474D800AD28A7 /* LaunchScreen.storyboard */,
-				1F6CF7AC291474D800AD28A7 /* Info.plist */,
 			);
 			path = TVmazeSchedule;
+			sourceTree = "<group>";
+		};
+		1F6CF7B629150B7100AD28A7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F6CF7A2291474D500AD28A7 /* EpisodeInfoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1F6CF7B729150B8E00AD28A7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1F6CF79E291474D500AD28A7 /* AppDelegate.swift */,
+				1F6CF7A0291474D500AD28A7 /* SceneDelegate.swift */,
+				1F6CF7AC291474D800AD28A7 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1F6CF7B829150B9800AD28A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F6CF7B42914756100AD28A7 /* EpisodeInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1F6CF7B929150BA600AD28A7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1F6CF7A4291474D500AD28A7 /* Main.storyboard */,
+				1F6CF7A9291474D800AD28A7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F6CF7A3291474D500AD28A7 /* ViewController.swift in Sources */,
+				1F6CF7A3291474D500AD28A7 /* EpisodeInfoViewController.swift in Sources */,
 				1F6CF79F291474D500AD28A7 /* AppDelegate.swift in Sources */,
 				1F6CF7A1291474D500AD28A7 /* SceneDelegate.swift in Sources */,
+				1F6CF7B52914756200AD28A7 /* EpisodeInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22NTM9AJGF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TVmazeSchedule/Info.plist;
+				INFOPLIST_FILE = TVmazeSchedule/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22NTM9AJGF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TVmazeSchedule/Info.plist;
+				INFOPLIST_FILE = TVmazeSchedule/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
