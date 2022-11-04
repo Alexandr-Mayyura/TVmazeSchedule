@@ -32,11 +32,11 @@ extension EpisodeInfoViewController {
             
             let decoder = JSONDecoder()
             do {
-                let scheduleShows = try decoder.decode(
+                let scheduleEpisodes = try decoder.decode(
                     [EpisodeInfo].self,
                     from: data
                 )
-                print(scheduleShows)
+                print(scheduleEpisodes)
             } catch let error {
                 print(error.localizedDescription)
             }
