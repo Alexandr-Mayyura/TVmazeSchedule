@@ -14,6 +14,7 @@
 		1F6CF7A8291474D800AD28A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6CF7A7291474D800AD28A7 /* Assets.xcassets */; };
 		1F6CF7AB291474D800AD28A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6CF7A9291474D800AD28A7 /* LaunchScreen.storyboard */; };
 		1F6CF7B52914756200AD28A7 /* EpisodeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CF7B42914756100AD28A7 /* EpisodeInfo.swift */; };
+		1FEE706D29156E6500555E3E /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE706C29156E6500555E3E /* EpisodeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1F6CF7AA291474D800AD28A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F6CF7AC291474D800AD28A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F6CF7B42914756100AD28A7 /* EpisodeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeInfo.swift; sourceTree = "<group>"; };
+		1FEE706C29156E6500555E3E /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		1F6CF79D291474D500AD28A7 /* TVmazeSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				1FEE706C29156E6500555E3E /* EpisodeCollectionViewCell.swift */,
 				1F6CF7B729150B8E00AD28A7 /* App */,
 				1F6CF7B629150B7100AD28A7 /* ViewControllers */,
 				1F6CF7B829150B9800AD28A7 /* Models */,
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F6CF7A3291474D500AD28A7 /* EpisodeInfoViewController.swift in Sources */,
+				1FEE706D29156E6500555E3E /* EpisodeCollectionViewCell.swift in Sources */,
 				1F6CF79F291474D500AD28A7 /* AppDelegate.swift in Sources */,
 				1F6CF7A1291474D500AD28A7 /* SceneDelegate.swift in Sources */,
 				1F6CF7B52914756200AD28A7 /* EpisodeInfo.swift in Sources */,
