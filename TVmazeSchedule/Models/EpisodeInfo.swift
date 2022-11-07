@@ -11,7 +11,7 @@ struct EpisodeInfo: Decodable {
     let name: String?
     let summary: String?
     let show: Show?
-    let airtime: String?
+    let airstamp: String
 }
 
 struct Show: Decodable {
@@ -24,7 +24,7 @@ struct Show: Decodable {
 }
 
 struct Schedule: Decodable {
-    let time: String?
+    let time: String
     let days: [String]?
 }
 
