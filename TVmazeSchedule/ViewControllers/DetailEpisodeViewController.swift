@@ -9,7 +9,7 @@ import UIKit
 
 class DetailEpisodeViewController: UIViewController {
     
-    @IBOutlet var nameShowLAbel: UILabel!
+    @IBOutlet var nameShowLabel: UILabel!
     @IBOutlet var nameEpisodeLabel: UILabel!
     @IBOutlet var showImageView: UIImageView!
     @IBOutlet var timeLabel: UILabel!
@@ -33,7 +33,7 @@ class DetailEpisodeViewController: UIViewController {
     }
     
     private func getValueForLabel() {
-        nameShowLAbel.text = episode.show.name
+        nameShowLabel.text = episode.show.name
         nameEpisodeLabel.text = episode.name
         timeLabel.text = episode.show.schedule?.time
         daysLabel.text = episode.show.schedule?.days?.joined(separator: ", ")
