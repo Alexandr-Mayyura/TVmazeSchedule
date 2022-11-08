@@ -7,57 +7,58 @@
 
 import UIKit
 
-class DatailEpisodeViewController: UIViewController {
-    
+class DetailEpisodeViewController: UIViewController {
     
     @IBOutlet var nameShowLAbel: UILabel!
-    
     @IBOutlet var nameEpisodeLabel: UILabel!
-    
     @IBOutlet var showImageView: UIImageView!
-    
     @IBOutlet var timeLabel: UILabel!
-    
     @IBOutlet var daysLabel: UILabel!
+    @IBOutlet var summaryLabel: UILabel!
     
-    @IBOutlet var discriprionLabel: UILabel!
-    
-    @IBOutlet var activityIndicarotView: UIActivityIndicatorView!
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     
     var episode: EpisodeInfo!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicarotView.startAnimating()
-        activityIndicarotView.hidesWhenStopped = true
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.hidesWhenStopped = true
+        getValueForLabel()
+        getValueForImageView()        
+    }
+
+    @IBAction func closedView() {
+        dismiss(animated: true)
+    }
+    
+    private func getValueForLabel() {
         nameShowLAbel.text = episode.show.name
         nameEpisodeLabel.text = episode.name
         timeLabel.text = episode.show.schedule?.time
         daysLabel.text = episode.show.schedule?.days?.joined(separator: ", ")
         
-        let summary = episode.summary?.replacingOccurrences(
+        let summaryEpisode = episode.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-        discriprionLabel.text = summary
-         
+        let plug = """
+            Sorry, but there is no summary for this episode.
+            Summary of the show you can see in the section all shows
+            """
+        summaryLabel.text = summaryEpisode ?? plug
+    }
+    
+    private func getValueForImageView() {
         NetworkManager.shared.fetchImage(from: episode.show.image?.medium) { [weak self] result in
-            
             switch result {
             case .success(let imageData):
                 self?.showImageView.image = UIImage(data: imageData)
-                self?.activityIndicarotView.stopAnimating()
+                self?.activityIndicatorView.stopAnimating()
             case .failure(let error):
                 print(error)
             }
         }
     }
-
-    
-    @IBAction func closedView() {
-        dismiss(animated: true)
-    }
-    
-
 }

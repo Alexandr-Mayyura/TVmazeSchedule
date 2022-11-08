@@ -18,11 +18,11 @@ struct Show: Decodable {
     let name: String?
     let summary: String?
     let image: Image?
-    let language: String?
     let schedule: Schedule?
     let network: Network?
     let webChannel: WebChannel?
-    let genres: [String]?
+    let officialSite: String?
+    let type: String?
 }
 
 struct Schedule: Decodable {

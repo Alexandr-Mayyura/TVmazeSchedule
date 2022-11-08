@@ -17,7 +17,6 @@ class EpisodeScheduleTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         episodeInfo.count
     }
@@ -36,26 +35,29 @@ class EpisodeScheduleTableViewController: UITableViewController {
         cell.timeLabel.text = time
         cell.nameShowLabel.text = schedule.show.name
         cell.nameEpisodeLabel.text = schedule.name
-        
         return cell
     }
     
-
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailEpisodSegue", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let datailVC = segue.destination as? DatailEpisodeViewController else { return }
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        datailVC.episode = episodeInfo[indexPath.row]
+        if segue.identifier == "detailEpisodSegue" {
+            guard let detailVC = segue.destination as? DetailEpisodeViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            detailVC.episode = episodeInfo[indexPath.row]
+        } else {
+            guard let showsVC = segue.destination as? ShowsCollectionViewController else { return }
+            showsVC.episodes = episodeInfo
+        }
     }
     
-    
+    @IBAction func showAllShows(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "allShowsSegue", sender: nil)
+    }
     
 
 }
@@ -74,6 +76,7 @@ extension EpisodeScheduleTableViewController {
     }
 }
 
+// MARK: DateFormatter
 extension EpisodeScheduleTableViewController {
     func dateFormattedFrom(string: String, timeZone: String) -> String {
         
@@ -84,15 +87,5 @@ extension EpisodeScheduleTableViewController {
         dateFormatter.dateFormat = "HH:mm"
         let dateForm = dateFormatter.string(from: data)
         return dateForm
-    }
-    
-    func dateFormatted(string: String, timeZone: String) -> Date {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.timeZone = TimeZone(identifier: "America/New_York")
-        guard let data = dateFormatter.date(from: string) else { return Date()}
-        
-        return data
     }
 }
