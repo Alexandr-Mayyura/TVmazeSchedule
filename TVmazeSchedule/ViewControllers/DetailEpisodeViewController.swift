@@ -1,5 +1,5 @@
 //
-//  DatailEpisodeViewController.swift
+//  DetailEpisodeViewController.swift
 //  TVmazeSchedule
 //
 //  Created by Aleksandr Mayyura on 08.11.2022.
@@ -43,11 +43,8 @@ class DetailEpisodeViewController: UIViewController {
             with: "",
             options: .regularExpression
         )
-        let plug = """
-            Sorry, but there is no summary for this episode.
-            Summary of the show you can see in the section all shows
-            """
-        summaryLabel.text = summaryEpisode ?? plug
+
+        summaryLabel.text = summaryEpisode ?? Plugs.summaryPlug.rawValue
     }
     
     private func getValueForImageView() {

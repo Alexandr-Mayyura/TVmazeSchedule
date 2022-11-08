@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F541BBC291B063700479656 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F541BBB291B063700479656 /* DataStore.swift */; };
 		1F57B4282919977700720836 /* EpisodeScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */; };
 		1F57B42A2919992600720836 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57B4292919992600720836 /* NetworkManager.swift */; };
 		1F6CF79F291474D500AD28A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CF79E291474D500AD28A7 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F541BBB291B063700479656 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScheduleTableViewController.swift; sourceTree = "<group>"; };
 		1F57B4292919992600720836 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1F6CF79B291474D500AD28A7 /* TVmazeSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVmazeSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +56,7 @@
 		1F57B42B2919993400720836 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1F541BBB291B063700479656 /* DataStore.swift */,
 				1F57B4292919992600720836 /* NetworkManager.swift */,
 			);
 			path = Services;
@@ -211,6 +214,7 @@
 				1F6CF7A1291474D500AD28A7 /* SceneDelegate.swift in Sources */,
 				1FAC62E7291AF0E400274E4F /* DetailShowViewController.swift in Sources */,
 				1F8D34E9291A7AC100CE6666 /* DetailEpisodeViewController.swift in Sources */,
+				1F541BBC291B063700479656 /* DataStore.swift in Sources */,
 				1F57B42A2919992600720836 /* NetworkManager.swift in Sources */,
 				1F57B4282919977700720836 /* EpisodeScheduleTableViewController.swift in Sources */,
 				1F8D34EC291AB14100CE6666 /* ShowsCollectionViewController.swift in Sources */,
