@@ -46,7 +46,7 @@ extension ShowsCollectionViewController: UICollectionViewDataSource {
 // MARK: CollectionView Delegate
 extension ShowsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.bounds.width / 2 - 32, height: view.frame.height/3)
+        return CGSize(width: view.bounds.width / 2 - 10, height: view.frame.height/2.5)
     }
 }
 

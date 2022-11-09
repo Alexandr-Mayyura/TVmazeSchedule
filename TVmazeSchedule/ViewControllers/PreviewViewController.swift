@@ -13,6 +13,7 @@ class PreviewViewController: UIViewController {
   
     @IBOutlet var firstMazeImageView: SpringImageView!
     @IBOutlet var secondMazeImageView: SpringImageView!
+    @IBOutlet var scheduleButton: SpringButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,12 @@ class PreviewViewController: UIViewController {
         secondMazeImageView.duration = 1.4
         secondMazeImageView.delay = 0.3
         secondMazeImageView.animate()
+        
+        scheduleButton.animation = "pop"
+        scheduleButton.duration = 1
+        scheduleButton.delay = 1.2
+        scheduleButton.animate()
+        
     }
     
    
