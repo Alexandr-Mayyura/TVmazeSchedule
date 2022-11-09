@@ -17,17 +17,9 @@ class PreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstMazeImageView.animation = "slideRight"
-        firstMazeImageView.curve = "easeIn"
-        firstMazeImageView.duration = 1.4
-        firstMazeImageView.delay = 0.3
-        firstMazeImageView.animate()
         
-        secondMazeImageView.animation = "slideLeft"
-        secondMazeImageView.curve = "easeIn"
-        secondMazeImageView.duration = 1.4
-        secondMazeImageView.delay = 0.3
-        secondMazeImageView.animate()
+        animatedImageView(firstMazeImageView, "slideRight")
+        animatedImageView(secondMazeImageView, "slideLeft")
         
         scheduleButton.animation = "pop"
         scheduleButton.duration = 1
@@ -35,9 +27,14 @@ class PreviewViewController: UIViewController {
         scheduleButton.animate()
         
     }
-    
-   
-    
+
+    private func animatedImageView(_ imageView: SpringImageView, _ animation: String) {
+        imageView.animation = animation
+        imageView.duration = 1.4
+        imageView.delay = 0.3
+        imageView.curve = "easeOut"
+        imageView.animate()
+    }
 
   
 
