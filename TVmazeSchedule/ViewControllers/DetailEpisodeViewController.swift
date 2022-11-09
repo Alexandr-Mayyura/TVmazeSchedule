@@ -43,7 +43,6 @@ class DetailEpisodeViewController: UIViewController {
             with: "",
             options: .regularExpression
         )
-
         summaryLabel.text = summaryEpisode ?? Plugs.summaryPlug.rawValue
     }
     

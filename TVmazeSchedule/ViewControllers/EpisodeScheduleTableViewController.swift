@@ -58,9 +58,8 @@ class EpisodeScheduleTableViewController: UITableViewController {
     @IBAction func showAllShows(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "allShowsSegue", sender: nil)
     }
-    
-
 }
+
 // MARK: Network Methods
 extension EpisodeScheduleTableViewController {
     private func fetchEpisodeSchedule() {

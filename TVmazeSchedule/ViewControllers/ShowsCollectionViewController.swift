@@ -13,8 +13,6 @@ class ShowsCollectionViewController: UIViewController {
     
     var episodes: [EpisodeInfo] = []
     
-    private var imageShow = UIImage()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -27,11 +25,10 @@ class ShowsCollectionViewController: UIViewController {
         indexPaths.forEach { indexPath in
             detailShowVC.show = episodes[indexPath.item].show
         }
-        
-        
     }
 }
 
+//MARK: CollectionView Data Source
 extension ShowsCollectionViewController: UICollectionViewDataSource {
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         episodes.count
@@ -46,6 +43,7 @@ extension ShowsCollectionViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: CollectionView Delegate
 extension ShowsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.bounds.width / 2 - 32, height: view.frame.height/3)
