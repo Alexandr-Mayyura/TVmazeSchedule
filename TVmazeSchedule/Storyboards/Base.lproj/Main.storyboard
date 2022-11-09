@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I5R-Ws-LMV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QtO-Ef-b70">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D9G-Dp-qQV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="k60-lv-95l">
                                     <size key="itemSize" width="128" height="128"/>
@@ -91,20 +91,20 @@
         <!--Detail Show View Controller-->
         <scene sceneID="h00-8W-bIN">
             <objects>
-                <viewController id="XgK-eC-DJQ" customClass="DetailShowViewController" customModule="TVmazeSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="XgK-eC-DJQ" customClass="DetailShowViewController" customModule="TVmazeSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hVG-sF-oyX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOB-eU-Qws">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ft-CR-gMP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyR-Qw-Yqp">
-                                        <rect key="frame" x="307.5" y="5" width="62.5" height="37"/>
+                                        <rect key="frame" x="307.5" y="5" width="62.5" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="done">
                                             <color key="baseForegroundColor" systemColor="systemGreenColor"/>
@@ -115,22 +115,22 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tQ-do-zWn">
-                                        <rect key="frame" x="16" y="52" width="343" height="33.5"/>
+                                        <rect key="frame" x="16" y="49.5" width="343" height="33.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IgL-8h-UeT">
-                                        <rect key="frame" x="7.5" y="105.5" width="360" height="323.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IgL-8h-UeT">
+                                        <rect key="frame" x="79.5" y="103" width="216" height="309"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="IgL-8h-UeT" secondAttribute="height" multiplier="288:259" id="VY7-4s-XlL"/>
+                                            <constraint firstAttribute="width" secondItem="IgL-8h-UeT" secondAttribute="height" multiplier="0.7" id="VY7-4s-XlL"/>
                                         </constraints>
                                     </imageView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0sj-ov-sUN">
-                                        <rect key="frame" x="177.5" y="257.5" width="20" height="20"/>
+                                        <rect key="frame" x="177.5" y="247.5" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pXY-T8-JZS">
-                                        <rect key="frame" x="16" y="449" width="343" height="99"/>
+                                        <rect key="frame" x="16" y="432" width="343" height="99"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zy-d7-nCB">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="18"/>
@@ -187,6 +187,7 @@
                             <constraint firstItem="AOB-eU-Qws" firstAttribute="top" secondItem="7kh-3L-e2v" secondAttribute="top" id="iyI-bj-Zpl"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="0sj-ov-sUN" id="fNf-MQ-80H"/>
                         <outlet property="imageShowImageView" destination="IgL-8h-UeT" id="e9o-XT-B4a"/>
@@ -253,7 +254,7 @@
                                 </tableViewCellContentView>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <connections>
-                                    <outlet property="nameEpisodeLabel" destination="hoO-3g-mBS" id="x7M-sH-M3k"/>
+                                    <outlet property="nameEpisodeLabel" destination="hoO-3g-mBS" id="Dfa-dE-iVV"/>
                                     <outlet property="nameShowLabel" destination="608-7A-ZG9" id="Dqc-b8-33p"/>
                                     <outlet property="timeLabel" destination="Dpe-CQ-wfe" id="r23-cb-k7r"/>
                                     <segue destination="C7N-Fh-o3o" kind="presentation" identifier="detailEpisodSegue" id="sZY-Jl-etp"/>
@@ -282,20 +283,20 @@
         <!--Detail Episode View Controller-->
         <scene sceneID="Ksg-LK-DhI">
             <objects>
-                <viewController id="C7N-Fh-o3o" customClass="DetailEpisodeViewController" customModule="TVmazeSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="C7N-Fh-o3o" customClass="DetailEpisodeViewController" customModule="TVmazeSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SAn-88-2Ws">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FH8-U4-8VN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RYY-sG-ywa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lV4-Fu-V7s">
-                                        <rect key="frame" x="307.5" y="5" width="62.5" height="34.5"/>
+                                        <rect key="frame" x="307.5" y="5" width="62.5" height="47.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="done">
                                             <color key="baseForegroundColor" systemColor="systemGreenColor"/>
@@ -305,7 +306,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Zl-CX-jsu">
-                                        <rect key="frame" x="16" y="49.5" width="343" height="64"/>
+                                        <rect key="frame" x="16" y="62.5" width="343" height="64"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBf-B0-Vej">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
@@ -321,14 +322,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qqt-hT-AHN">
-                                        <rect key="frame" x="80" y="133.5" width="215" height="215.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qqt-hT-AHN">
+                                        <rect key="frame" x="98.5" y="146.5" width="178" height="222.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Qqt-hT-AHN" secondAttribute="height" multiplier="1:1" id="HFk-GK-M2Z"/>
+                                            <constraint firstAttribute="width" secondItem="Qqt-hT-AHN" secondAttribute="height" multiplier="0.8" id="HFk-GK-M2Z"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1nw-Yr-XCy">
-                                        <rect key="frame" x="16" y="359" width="343" height="74.5"/>
+                                        <rect key="frame" x="16" y="379" width="343" height="74.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWF-Oi-kdl">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="18"/>
@@ -351,7 +352,7 @@
                                         </subviews>
                                     </stackView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="YSg-9d-tR1">
-                                        <rect key="frame" x="169" y="230.5" width="37" height="37"/>
+                                        <rect key="frame" x="169" y="247" width="37" height="37"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <constraints>
@@ -404,10 +405,61 @@
             </objects>
             <point key="canvasLocation" x="1178" y="-70"/>
         </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="aEn-LZ-QgX">
+            <objects>
+                <viewController storyboardIdentifier="Mains" id="QtO-Ef-b70" customClass="PreviewViewController" customModule="TVmazeSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eiZ-Sl-dzt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-jM-i4N">
+                                <rect key="frame" x="142.5" y="413.5" width="90" height="39"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" red="0.18314981459999999" green="0.64421164990000002" blue="0.60034608840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Schedule"/>
+                                <connections>
+                                    <segue destination="I5R-Ws-LMV" kind="show" id="9F4-Vf-hpn"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ddh-2i-j2m">
+                                <rect key="frame" x="62.5" y="193.5" width="250" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maze1" translatesAutoresizingMaskIntoConstraints="NO" id="rja-pb-VgR" customClass="SpringImageView" customModule="SpringAnimation">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="80"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maze2" translatesAutoresizingMaskIntoConstraints="NO" id="xfC-fE-iWV" customClass="SpringImageView" customModule="SpringAnimation">
+                                        <rect key="frame" x="163" y="0.0" width="87" height="80"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ex6-Yi-viX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wvq-jM-i4N" firstAttribute="centerX" secondItem="eiZ-Sl-dzt" secondAttribute="centerX" id="1ec-iu-nva"/>
+                            <constraint firstItem="wvq-jM-i4N" firstAttribute="top" secondItem="Ddh-2i-j2m" secondAttribute="bottom" constant="140" id="IzH-yI-6Et"/>
+                            <constraint firstItem="Ddh-2i-j2m" firstAttribute="centerY" secondItem="eiZ-Sl-dzt" secondAttribute="centerY" constant="-100" id="bqI-yI-iep"/>
+                            <constraint firstItem="Ddh-2i-j2m" firstAttribute="centerX" secondItem="eiZ-Sl-dzt" secondAttribute="centerX" id="hJb-v2-2kQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstMazeImageView" destination="rja-pb-VgR" id="28T-re-7ry"/>
+                        <outlet property="secondMazeImageView" destination="xfC-fE-iWV" id="kSq-P1-0if"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3B-rw-8lZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1527.2" y="-62.518740629685162"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="U1C-nK-bph">
             <objects>
-                <navigationController storyboardIdentifier="Main" id="I5R-Ws-LMV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Main" modalPresentationStyle="fullScreen" id="I5R-Ws-LMV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SUl-GP-7Xf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="HgO-h0-kX9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -429,6 +481,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="maze1" width="163" height="80"/>
+        <image name="maze2" width="87" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

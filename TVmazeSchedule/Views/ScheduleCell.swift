@@ -8,7 +8,7 @@
 import UIKit
 
 class ScheduleCell: UITableViewCell {
-    
+        
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var nameShowLabel: UILabel!
     @IBOutlet var nameEpisodeLabel: UILabel!

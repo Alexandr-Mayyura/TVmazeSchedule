@@ -11,7 +11,11 @@ class DetailEpisodeViewController: UIViewController {
     
     @IBOutlet var nameShowLabel: UILabel!
     @IBOutlet var nameEpisodeLabel: UILabel!
-    @IBOutlet var showImageView: UIImageView!
+    @IBOutlet var showImageView: UIImageView! {
+        didSet {
+            showImageView.layer.cornerRadius = 8
+        }
+    }
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var daysLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
@@ -22,6 +26,7 @@ class DetailEpisodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidesWhenStopped = true
         getValueForLabel()

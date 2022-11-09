@@ -8,6 +8,7 @@
 import UIKit
 
 class EpisodeScheduleTableViewController: UITableViewController {
+
     
     private var episodeInfo: [EpisodeInfo] = []
     

@@ -13,7 +13,11 @@ class DetailShowViewController: UIViewController {
     @IBOutlet var officialSiteLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
-    @IBOutlet var imageShowImageView: UIImageView!
+    @IBOutlet var imageShowImageView: UIImageView! {
+        didSet {
+            imageShowImageView.layer.cornerRadius = 8
+        }
+    }
     
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     

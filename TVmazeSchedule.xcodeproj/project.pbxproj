@@ -21,6 +21,8 @@
 		1F8D34EC291AB14100CE6666 /* ShowsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8D34EB291AB14100CE6666 /* ShowsCollectionViewController.swift */; };
 		1F8D34F0291ABFBA00CE6666 /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8D34EF291ABFBA00CE6666 /* ShowCell.swift */; };
 		1FAC62E7291AF0E400274E4F /* DetailShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC62E6291AF0E400274E4F /* DetailShowViewController.swift */; };
+		1FC14641291C233200718B20 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC14640291C233200718B20 /* PreviewViewController.swift */; };
+		1FC14647291C2DAA00718B20 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 1FC14646291C2DAA00718B20 /* SpringAnimation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		1F8D34EB291AB14100CE6666 /* ShowsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsCollectionViewController.swift; sourceTree = "<group>"; };
 		1F8D34EF291ABFBA00CE6666 /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
 		1FAC62E6291AF0E400274E4F /* DetailShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShowViewController.swift; sourceTree = "<group>"; };
+		1FC14640291C233200718B20 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC14647291C2DAA00718B20 /* SpringAnimation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +71,7 @@
 			children = (
 				1F6CF79D291474D500AD28A7 /* TVmazeSchedule */,
 				1F6CF79C291474D500AD28A7 /* Products */,
+				1FC14645291C2DAA00718B20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +100,7 @@
 		1F6CF7B629150B7100AD28A7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1FC14640291C233200718B20 /* PreviewViewController.swift */,
 				1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */,
 				1F8D34E8291A7AC100CE6666 /* DetailEpisodeViewController.swift */,
 				1F8D34EB291AB14100CE6666 /* ShowsCollectionViewController.swift */,
@@ -139,6 +145,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1FC14645291C2DAA00718B20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +168,9 @@
 			dependencies = (
 			);
 			name = TVmazeSchedule;
+			packageProductDependencies = (
+				1FC14646291C2DAA00718B20 /* SpringAnimation */,
+			);
 			productName = TVmazeSchedule;
 			productReference = 1F6CF79B291474D500AD28A7 /* TVmazeSchedule.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +199,9 @@
 				Base,
 			);
 			mainGroup = 1F6CF792291474D400AD28A7;
+			packageReferences = (
+				1FC14642291C2A1200718B20 /* XCRemoteSwiftPackageReference "SpringAnimation" */,
+			);
 			productRefGroup = 1F6CF79C291474D500AD28A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,6 +240,7 @@
 				1F8D34F0291ABFBA00CE6666 /* ShowCell.swift in Sources */,
 				1F8D34E7291A4F8700CE6666 /* ScheduleCell.swift in Sources */,
 				1F6CF7B52914756200AD28A7 /* EpisodeInfo.swift in Sources */,
+				1FC14641291C233200718B20 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1FC14642291C2A1200718B20 /* XCRemoteSwiftPackageReference "SpringAnimation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LexDeBash/SpringAnimation.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1FC14646291C2DAA00718B20 /* SpringAnimation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FC14642291C2A1200718B20 /* XCRemoteSwiftPackageReference "SpringAnimation" */;
+			productName = SpringAnimation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F6CF793291474D500AD28A7 /* Project object */;
 }
