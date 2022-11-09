@@ -35,7 +35,7 @@ class DetailEpisodeViewController: UIViewController {
     private func getValueForLabel() {
         nameShowLabel.text = episode.show.name
         nameEpisodeLabel.text = episode.name
-        timeLabel.text = episode.show.schedule?.time
+        timeLabel.text = episode.airtime
         daysLabel.text = episode.show.schedule?.days?.joined(separator: ", ")
         
         let summaryEpisode = episode.summary?.replacingOccurrences(

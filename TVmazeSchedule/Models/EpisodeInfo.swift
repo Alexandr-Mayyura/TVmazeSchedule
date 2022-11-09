@@ -12,6 +12,7 @@ struct EpisodeInfo: Decodable {
     let summary: String?
     let show: Show
     let airstamp: String
+    let airtime: String
 }
 
 struct Show: Decodable {
