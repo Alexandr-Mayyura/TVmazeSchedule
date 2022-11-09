@@ -201,7 +201,7 @@
             </objects>
             <point key="canvasLocation" x="1869.375" y="-764.78873239436621"/>
         </scene>
-        <!--Schedule Today-->
+        <!--Schedule Shows-->
         <scene sceneID="3Kr-FS-1k4">
             <objects>
                 <tableViewController id="out-24-VuY" customClass="EpisodeScheduleTableViewController" customModule="TVmazeSchedule" customModuleProvider="target" sceneMemberID="viewController">
@@ -265,7 +265,7 @@
                             <outlet property="delegate" destination="out-24-VuY" id="s4j-y1-6XK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Schedule Today" id="zWi-9l-gEl">
+                    <navigationItem key="navigationItem" title="Schedule Shows" id="zWi-9l-gEl">
                         <barButtonItem key="rightBarButtonItem" title="All shows" id="9nV-Hv-mbX">
                             <color key="tintColor" systemColor="systemGreenColor"/>
                             <connections>
