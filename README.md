@@ -10,7 +10,7 @@
 + ResponseJSON
 + Status code
 + Validate
-+ MAnual parsing JSON
++ Manual parsing JSON
 + POST Requests
 + Responce Decodable
 
