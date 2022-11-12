@@ -31,18 +31,14 @@ struct EpisodeInfo {
 struct Show {
     let name: String
     let summary: String
-    let image: Image
-    let schedule: Schedule
-    let network: Network
+    let image: ImageIcon
     let officialSite: String
     let type: String
     
     init(showData: [String: Any]) {
         name = showData["name"] as? String ?? ""
         summary = showData["summary"] as? String ?? ""
-        image = showData["image"] as? Image ?? Image(imageData: ["": ""])
-        schedule = showData["schedule"] as? Schedule ?? Schedule(scheduleData: ["": ""])
-        network = showData["network"] as? Network ?? Network(networkData: ["": ""])
+        image = showData["image"] as? ImageIcon ?? ImageIcon(medium: "")
         officialSite = showData["officialSite"] as? String ?? ""
         type = showData["type"] as? String ?? ""
     }
@@ -54,39 +50,48 @@ struct Show {
     }
 }
 
-struct Schedule {
-    let time: String
-    let days: [String]
-    
-    init(scheduleData: [String: Any]) {
-        time = scheduleData["time"] as? String ?? ""
-        days = scheduleData["days"] as? [String] ?? [""]
-    }
-}
+//struct Schedule {
+//    let time: String
+//    let days: [String]
+//
+//    init(scheduleData: [String: Any]) {
+//        time = scheduleData["time"] as? String ?? ""
+//        days = scheduleData["days"] as? [String] ?? [""]
+//    }
+//}
 
-struct Image {
+struct ImageIcon {
     let medium: String
     
-    init(imageData: [String: Any]) {
-        medium = imageData["medium"] as? String ?? ""
-    }
+//    init(imageData: [String: Any]) {
+//        medium = imageData["medium"] as? String ?? ""
+//    }
 }
 
-struct Network {
-    let country: Country
-    
-    init(networkData: [String: Any]) {
-        country = networkData["country"] as? Country ?? Country(countryData: ["" : ""])
-    }
-}
-
-struct Country: Decodable {
-    let timezone: String
-    
-    init(countryData: [String: Any]) {
-        timezone = countryData["timezone"] as? String ?? ""
-    }
-}
+//struct Network {
+//    let country: Country
+//
+//    init(networkData: [String: Any]) {
+//        country = Country.getCountry()
+//    }
+//}
+//
+//struct Country: Decodable {
+//    let timezone: String
+//
+//    init(timezone: String) {
+//        self.timezone = timezone
+//    }
+//
+//    init(countryData: [String: Any]) {
+//        timezone = countryData["timezone"] as? String ?? ""
+//    }
+//
+//    static func getCountry() -> Country {
+//
+//        Country(countryData: ["timezone": Country(timezone: "timezone")])
+//    }
+//}
 
 
 

@@ -27,14 +27,14 @@ class EpisodeScheduleTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
         guard let cell = cell as? ScheduleCell else { return UITableViewCell() }
         let schedule = episodeInfo[indexPath.row]
-        let timeZoneNetwork = schedule.show.network.country.timezone
+//        let timeZoneNetwork = schedule.show.network.country.timezone
 //        let timeZoneWebChannel = schedule.show.webChannel?.country.timezone
-        let time = dateFormattedFrom(
-            string: schedule.airstamp,
-            timeZone: timeZoneNetwork
-    )
+//        let time = dateFormattedFrom(
+//            string: schedule.airstamp,
+//            timeZone: timeZoneNetwork
+//    )
         
-        cell.timeLabel.text = time
+//        cell.timeLabel.text = time
         cell.nameShowLabel.text = schedule.show.name
         cell.nameEpisodeLabel.text = schedule.name
         return cell
