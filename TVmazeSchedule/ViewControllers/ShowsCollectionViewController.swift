@@ -55,7 +55,6 @@ class ShowsCollectionViewController: UIViewController {
             textField.textColor = .white
         }
     }
-    
 }
 
 //MARK: CollectionView Data Source
@@ -83,6 +82,7 @@ extension ShowsCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: Network Methods
 extension ShowsCollectionViewController {
     private func fetchEpisodeSchedule() {
         
@@ -99,6 +99,7 @@ extension ShowsCollectionViewController {
     }
 }
 
+//MARK: Search Methods
 extension ShowsCollectionViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text ?? "")

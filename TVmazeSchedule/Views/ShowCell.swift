@@ -24,10 +24,9 @@ class ShowCell: UICollectionViewCell {
     }
     
     func configure(with episode: Show) {
-        
         showName.text = episode.name
-        
         let url = episode.image.medium
+        
         NetworkManager.shared.fetchImage(from: url) { [weak self] result in
             switch result {
             case .success(let imageData):
@@ -38,7 +37,6 @@ class ShowCell: UICollectionViewCell {
             }
         }
     }
-    
 }
 
 

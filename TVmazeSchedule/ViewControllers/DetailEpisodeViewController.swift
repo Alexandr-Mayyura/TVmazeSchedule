@@ -56,7 +56,10 @@ class DetailEpisodeViewController: UIViewController {
         )
         summaryLabel.text = summaryEpisode
     }
-    
+}
+
+// MARK: Network Methods
+extension DetailEpisodeViewController {
     private func getValueForImageView() {
         NetworkManager.shared.fetchImage(from: episode.show.image.medium) { [weak self] result in
             switch result {
