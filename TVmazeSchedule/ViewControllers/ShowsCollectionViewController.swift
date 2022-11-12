@@ -89,7 +89,6 @@ extension ShowsCollectionViewController {
         NetworkManager.shared.fetchShow(from: Link.showsURL.rawValue) { [weak self] result in
             switch result {
             case .success(let schedule):
-                print(schedule)
                 self?.episodes = schedule
                 self?.collectionView.reloadData()
             case .failure(let error):
