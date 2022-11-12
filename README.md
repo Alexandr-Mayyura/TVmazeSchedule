@@ -17,11 +17,5 @@
 #### Public api:
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
 
-#### IOS version:
-15.5
+##### IOS version: <br/>15.5<br/>Language version:<br/>Swift 5.6<br/>Design Patterns:<br/>MVC 
 
-#### Language version:
-Swift 5.6
-
-#### Design Patterns: 
-MVC 
