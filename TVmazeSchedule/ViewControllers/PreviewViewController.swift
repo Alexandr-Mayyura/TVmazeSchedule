@@ -8,7 +8,6 @@
 import UIKit
 import SpringAnimation
 
-
 class PreviewViewController: UIViewController {
   
     @IBOutlet var firstMazeImageView: SpringImageView!
@@ -31,7 +30,6 @@ class PreviewViewController: UIViewController {
         scheduleButton.duration = 1
         scheduleButton.delay = 1.3
         scheduleButton.animate()
-        
     }
 
     private func animatedImageView(_ imageView: SpringImageView, _ animation: String) {
@@ -41,7 +39,4 @@ class PreviewViewController: UIViewController {
         imageView.curve = "easeOut"
         imageView.animate()
     }
-
-  
-
 }

@@ -13,12 +13,6 @@ enum Link: String {
     case showsURL = "https://api.tvmaze.com/shows"
 }
 
-enum NetworkError: Error {
-    case invalidURL
-    case noData
-    case decodingError
-}
-
 class NetworkManager {
     static let shared = NetworkManager()
     
