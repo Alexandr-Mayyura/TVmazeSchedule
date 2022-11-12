@@ -23,9 +23,9 @@ class ShowCell: UICollectionViewCell {
         activityIndicatorView.hidesWhenStopped = true
     }
     
-    func configure(with episode: Show) {
-        showName.text = episode.name
-        let url = episode.image.medium
+    func configure(with show: Show) {
+        showName.text = show.name
+        let url = show.image.medium
         
         NetworkManager.shared.fetchImage(from: url) { [weak self] result in
             switch result {
