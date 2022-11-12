@@ -2,15 +2,15 @@
 
 ## This is a learning project at swiftbook school
 
-### GET Request
++ GET Request
 + Parsing JSON
 + NetworkManager
 + Frameworks
-### Alamofire
++ Manual parsing JSON
++ #### Alamofire
 + ResponseJSON
 + Status code
 + Validate
-+ Manual parsing JSON
 + POST Requests
 + Responce Decodable
 
