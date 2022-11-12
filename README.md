@@ -13,3 +13,6 @@
 + MAnual parsing JSON
 + POST Requests
 + Responce Decodable
+
+Publics apis:<br/> https://api.tvmaze.com/schedule  <br/>
+              https://api.tvmaze.com/shows
