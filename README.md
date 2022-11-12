@@ -14,5 +14,14 @@
 + POST Requests
 + Responce Decodable
 
-Publics apis:<br/> https://api.tvmaze.com/schedule  <br/>
-              https://api.tvmaze.com/shows
+#### Public api:
+https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
+
+#### IOS version:
+15.5
+
+#### Language version:
+Swift 5.6
+
+#### Design Patterns: 
+MVC 
