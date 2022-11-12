@@ -21,9 +21,15 @@ class PreviewViewController: UIViewController {
         animatedImageView(firstMazeImageView, "slideRight")
         animatedImageView(secondMazeImageView, "slideLeft")
         
+        scheduleButton.animation = "fadeIn"
+        scheduleButton.duration = 1.4
+        scheduleButton.delay = 0.3
+        scheduleButton.curve = "easeOut"
+        scheduleButton.animate()
+        
         scheduleButton.animation = "pop"
         scheduleButton.duration = 1
-        scheduleButton.delay = 1.2
+        scheduleButton.delay = 1.3
         scheduleButton.animate()
         
     }

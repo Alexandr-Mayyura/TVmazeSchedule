@@ -9,12 +9,13 @@ import UIKit
 
 class EpisodeScheduleTableViewController: UITableViewController {
 
-    
+    private var spinnerView = UIActivityIndicatorView()
     private var episodeInfo: [EpisodeInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchEpisodeSchedule()
+        showSpinner(in: tableView)
+//        fetchEpisodeSchedule()
     }
 
     // MARK: - Table view data source
@@ -26,11 +27,11 @@ class EpisodeScheduleTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
         guard let cell = cell as? ScheduleCell else { return UITableViewCell() }
         let schedule = episodeInfo[indexPath.row]
-        let timeZoneNetwork = schedule.show.network?.country.timezone
-        let timeZoneWebChannel = schedule.show.webChannel?.country.timezone
+        let timeZoneNetwork = schedule.show.network.country.timezone
+//        let timeZoneWebChannel = schedule.show.webChannel?.country.timezone
         let time = dateFormattedFrom(
             string: schedule.airstamp,
-            timeZone: (timeZoneNetwork ?? timeZoneWebChannel) ?? ""
+            timeZone: timeZoneNetwork
     )
         
         cell.timeLabel.text = time
@@ -50,31 +51,35 @@ class EpisodeScheduleTableViewController: UITableViewController {
             guard let detailVC = segue.destination as? DetailEpisodeViewController else { return }
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             detailVC.episode = episodeInfo[indexPath.row]
-        } else {
-            guard let showsVC = segue.destination as? ShowsCollectionViewController else { return }
-            showsVC.episodes = episodeInfo
         }
     }
     
-    @IBAction func showAllShows(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "allShowsSegue", sender: nil)
+    private func showSpinner(in view: UIView) {
+        spinnerView = UIActivityIndicatorView(style: .large)
+        spinnerView.color = .gray
+        spinnerView.startAnimating()
+        spinnerView.center = view.center
+        spinnerView.hidesWhenStopped = true
+
+        view.addSubview(spinnerView)
     }
 }
 
 // MARK: Network Methods
-extension EpisodeScheduleTableViewController {
-    private func fetchEpisodeSchedule() {
-        NetworkManager.shared.fetch([EpisodeInfo].self, from: Link.scheduleURL.rawValue) { [weak self] result in
-            switch result {
-            case .success(let schedule):
-                self?.episodeInfo = schedule
-                self?.tableView.reloadData()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-}
+//extension EpisodeScheduleTableViewController {
+//    private func fetchEpisodeSchedule() {
+//        NetworkManager.shared.fetch([EpisodeInfo].self, from: Link.scheduleURL.rawValue) { [weak self] result in
+//            switch result {
+//            case .success(let schedule):
+//                self?.episodeInfo = schedule
+//                self?.tableView.reloadData()
+//                self?.spinnerView.stopAnimating()
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
+//}
 
 // MARK: DateFormatter
 extension EpisodeScheduleTableViewController {

@@ -10,7 +10,11 @@ import UIKit
 class ShowCell: UICollectionViewCell {
     
     @IBOutlet var showName: UILabel!
-    @IBOutlet var showImageView: UIImageView!
+    @IBOutlet var showImageView: UIImageView! {
+        didSet {
+            showImageView.layer.cornerRadius = 8
+        }
+    }
 
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     
@@ -19,11 +23,11 @@ class ShowCell: UICollectionViewCell {
         activityIndicatorView.hidesWhenStopped = true
     }
     
-    func configure(with episode: EpisodeInfo) {
+    func configure(with episode: Show) {
         
-        showName.text = episode.show.name
+        showName.text = episode.name
         
-        let url = episode.show.image?.medium
+        let url = episode.image.medium
         NetworkManager.shared.fetchImage(from: url) { [weak self] result in
             switch result {
             case .success(let imageData):

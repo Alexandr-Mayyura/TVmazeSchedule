@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Alamofire
 
 enum Link: String {
     case scheduleURL = "https://api.tvmaze.com/schedule"
+    case showsURL = "https://api.tvmaze.com/shows"
 }
 
 enum NetworkError: Error {
@@ -23,29 +25,20 @@ class NetworkManager {
     private init() {}
     
     
-    func fetch<T: Decodable>(_ type: T.Type, from url: String?, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    func fetch(from url: String, completion: @escaping (Result<[Show], AFError>) -> Void) {
         
-        guard let url = URL(string: url ?? "") else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                completion(.failure(.noData))
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let type = try JSONDecoder().decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(type))
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let shows = Show.getShows(from: value)
+                    print(shows)
+                    completion(.success(shows))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
-            } catch let error {
-                print(error.localizedDescription)
             }
-        }.resume()
     }
     
     func fetchImage(from url: String?, completion: @escaping (Result<Data, NetworkError>) -> Void) {

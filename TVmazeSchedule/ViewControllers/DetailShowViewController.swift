@@ -10,9 +10,9 @@ import UIKit
 class DetailShowViewController: UIViewController {
     
     @IBOutlet var nameShowLabel: UILabel!
-    @IBOutlet var officialSiteLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
+    @IBOutlet var officialSiteTextView: UITextView!
     @IBOutlet var imageShowImageView: UIImageView! {
         didSet {
             imageShowImageView.layer.cornerRadius = 8
@@ -25,28 +25,32 @@ class DetailShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        officialSiteTextView.dataDetectorTypes = .link
+        officialSiteTextView.linkTextAttributes = [.foregroundColor: UIColor.green, .underlineStyle: NSUnderlineStyle.single.rawValue]
+        
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidesWhenStopped = true
         getValueForLabel()
         getValueForImageView()
+        
     }
     
     private func getValueForLabel() {
         nameShowLabel.text = show.name
-        officialSiteLabel.text = show.officialSite
+        officialSiteTextView.text = show.officialSite
         typeLabel.text = show.type
         
-        let summaryEpisode = show.summary?.replacingOccurrences(
+        let summaryEpisode = show.summary.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
         
-        summaryLabel.text = summaryEpisode ?? "No summary"
+        summaryLabel.text = summaryEpisode
     }
     
     private func getValueForImageView() {
-        NetworkManager.shared.fetchImage(from: show.image?.medium) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: show.image.medium) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.imageShowImageView.image = UIImage(data: imageData)

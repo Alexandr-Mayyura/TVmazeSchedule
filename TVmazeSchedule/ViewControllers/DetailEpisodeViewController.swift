@@ -41,18 +41,18 @@ class DetailEpisodeViewController: UIViewController {
         nameShowLabel.text = episode.show.name
         nameEpisodeLabel.text = episode.name
         timeLabel.text = episode.airtime
-        daysLabel.text = episode.show.schedule?.days?.joined(separator: ", ")
+        daysLabel.text = episode.show.schedule.days.joined(separator: ", ")
         
-        let summaryEpisode = episode.summary?.replacingOccurrences(
+        let summaryEpisode = episode.summary.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-        summaryLabel.text = summaryEpisode ?? Plugs.summaryPlug.rawValue
+        summaryLabel.text = summaryEpisode
     }
     
     private func getValueForImageView() {
-        NetworkManager.shared.fetchImage(from: episode.show.image?.medium) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: episode.show.image.medium) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.showImageView.image = UIImage(data: imageData)

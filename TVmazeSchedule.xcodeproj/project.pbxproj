@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F065281291EC53300519C0E /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F065280291EC53300519C0E /* Show.swift */; };
 		1F541BBC291B063700479656 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F541BBB291B063700479656 /* DataStore.swift */; };
 		1F57B4282919977700720836 /* EpisodeScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */; };
 		1F57B42A2919992600720836 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57B4292919992600720836 /* NetworkManager.swift */; };
@@ -23,9 +24,11 @@
 		1FAC62E7291AF0E400274E4F /* DetailShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC62E6291AF0E400274E4F /* DetailShowViewController.swift */; };
 		1FC14641291C233200718B20 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC14640291C233200718B20 /* PreviewViewController.swift */; };
 		1FC14647291C2DAA00718B20 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 1FC14646291C2DAA00718B20 /* SpringAnimation */; };
+		1FF2FD9E291EF4EE00AC9C0C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1FF2FD9D291EF4EE00AC9C0C /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F065280291EC53300519C0E /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		1F541BBB291B063700479656 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScheduleTableViewController.swift; sourceTree = "<group>"; };
 		1F57B4292919992600720836 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FC14647291C2DAA00718B20 /* SpringAnimation in Frameworks */,
+				1FF2FD9E291EF4EE00AC9C0C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				1F6CF7B42914756100AD28A7 /* EpisodeInfo.swift */,
+				1F065280291EC53300519C0E /* Show.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			name = TVmazeSchedule;
 			packageProductDependencies = (
 				1FC14646291C2DAA00718B20 /* SpringAnimation */,
+				1FF2FD9D291EF4EE00AC9C0C /* Alamofire */,
 			);
 			productName = TVmazeSchedule;
 			productReference = 1F6CF79B291474D500AD28A7 /* TVmazeSchedule.app */;
@@ -201,6 +207,7 @@
 			mainGroup = 1F6CF792291474D400AD28A7;
 			packageReferences = (
 				1FC14642291C2A1200718B20 /* XCRemoteSwiftPackageReference "SpringAnimation" */,
+				1FF2FD9C291EF4EE00AC9C0C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 1F6CF79C291474D500AD28A7 /* Products */;
 			projectDirPath = "";
@@ -239,6 +246,7 @@
 				1F8D34EC291AB14100CE6666 /* ShowsCollectionViewController.swift in Sources */,
 				1F8D34F0291ABFBA00CE6666 /* ShowCell.swift in Sources */,
 				1F8D34E7291A4F8700CE6666 /* ScheduleCell.swift in Sources */,
+				1F065281291EC53300519C0E /* Show.swift in Sources */,
 				1F6CF7B52914756200AD28A7 /* EpisodeInfo.swift in Sources */,
 				1FC14641291C233200718B20 /* PreviewViewController.swift in Sources */,
 			);
@@ -470,6 +478,14 @@
 				kind = branch;
 			};
 		};
+		1FF2FD9C291EF4EE00AC9C0C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -477,6 +493,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1FC14642291C2A1200718B20 /* XCRemoteSwiftPackageReference "SpringAnimation" */;
 			productName = SpringAnimation;
+		};
+		1FF2FD9D291EF4EE00AC9C0C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FF2FD9C291EF4EE00AC9C0C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
