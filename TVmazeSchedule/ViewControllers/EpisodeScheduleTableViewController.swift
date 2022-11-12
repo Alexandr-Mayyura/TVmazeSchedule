@@ -15,7 +15,7 @@ class EpisodeScheduleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showSpinner(in: tableView)
-//        fetchEpisodeSchedule()
+        fetchEpisodeSchedule()
     }
 
     // MARK: - Table view data source
@@ -27,14 +27,13 @@ class EpisodeScheduleTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
         guard let cell = cell as? ScheduleCell else { return UITableViewCell() }
         let schedule = episodeInfo[indexPath.row]
-//        let timeZoneNetwork = schedule.show.network.country.timezone
-//        let timeZoneWebChannel = schedule.show.webChannel?.country.timezone
-//        let time = dateFormattedFrom(
-//            string: schedule.airstamp,
-//            timeZone: timeZoneNetwork
-//    )
-        
-//        cell.timeLabel.text = time
+        let timeZoneNetwork = schedule.show.network.country.timezone
+        let time = dateFormattedFrom(
+            string: schedule.airstamp,
+            timeZone: timeZoneNetwork
+    )
+
+        cell.timeLabel.text = time
         cell.nameShowLabel.text = schedule.show.name
         cell.nameEpisodeLabel.text = schedule.name
         return cell
@@ -66,20 +65,20 @@ class EpisodeScheduleTableViewController: UITableViewController {
 }
 
 // MARK: Network Methods
-//extension EpisodeScheduleTableViewController {
-//    private func fetchEpisodeSchedule() {
-//        NetworkManager.shared.fetch([EpisodeInfo].self, from: Link.scheduleURL.rawValue) { [weak self] result in
-//            switch result {
-//            case .success(let schedule):
-//                self?.episodeInfo = schedule
-//                self?.tableView.reloadData()
-//                self?.spinnerView.stopAnimating()
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-//}
+extension EpisodeScheduleTableViewController {
+    private func fetchEpisodeSchedule() {
+        NetworkManager.shared.fetchEpisode(from: Link.scheduleURL.rawValue) { [weak self] result in
+            switch result {
+            case .success(let schedule):
+                self?.episodeInfo = schedule
+                self?.tableView.reloadData()
+                self?.spinnerView.stopAnimating()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+}
 
 // MARK: DateFormatter
 extension EpisodeScheduleTableViewController {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F065281291EC53300519C0E /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F065280291EC53300519C0E /* Show.swift */; };
 		1F541BBC291B063700479656 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F541BBB291B063700479656 /* DataStore.swift */; };
 		1F57B4282919977700720836 /* EpisodeScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */; };
 		1F57B42A2919992600720836 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57B4292919992600720836 /* NetworkManager.swift */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F065280291EC53300519C0E /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		1F541BBB291B063700479656 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScheduleTableViewController.swift; sourceTree = "<group>"; };
 		1F57B4292919992600720836 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -105,10 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				1FC14640291C233200718B20 /* PreviewViewController.swift */,
-				1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */,
-				1F8D34E8291A7AC100CE6666 /* DetailEpisodeViewController.swift */,
 				1F8D34EB291AB14100CE6666 /* ShowsCollectionViewController.swift */,
 				1FAC62E6291AF0E400274E4F /* DetailShowViewController.swift */,
+				1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */,
+				1F8D34E8291A7AC100CE6666 /* DetailEpisodeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				1F6CF7B42914756100AD28A7 /* EpisodeInfo.swift */,
-				1F065280291EC53300519C0E /* Show.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,7 +243,6 @@
 				1F8D34EC291AB14100CE6666 /* ShowsCollectionViewController.swift in Sources */,
 				1F8D34F0291ABFBA00CE6666 /* ShowCell.swift in Sources */,
 				1F8D34E7291A4F8700CE6666 /* ScheduleCell.swift in Sources */,
-				1F065281291EC53300519C0E /* Show.swift in Sources */,
 				1F6CF7B52914756200AD28A7 /* EpisodeInfo.swift in Sources */,
 				1FC14641291C233200718B20 /* PreviewViewController.swift in Sources */,
 			);

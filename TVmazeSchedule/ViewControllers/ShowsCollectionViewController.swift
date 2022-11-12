@@ -85,9 +85,11 @@ extension ShowsCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 extension ShowsCollectionViewController {
     private func fetchEpisodeSchedule() {
-        NetworkManager.shared.fetch(from: Link.showsURL.rawValue) { [weak self] result in
+        
+        NetworkManager.shared.fetchShow(from: Link.showsURL.rawValue) { [weak self] result in
             switch result {
             case .success(let schedule):
+                print(schedule)
                 self?.episodes = schedule
                 self?.collectionView.reloadData()
             case .failure(let error):

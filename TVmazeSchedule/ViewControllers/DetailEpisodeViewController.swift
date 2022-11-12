@@ -16,6 +16,7 @@ class DetailEpisodeViewController: UIViewController {
             showImageView.layer.cornerRadius = 8
         }
     }
+    
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var daysLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
@@ -26,7 +27,6 @@ class DetailEpisodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidesWhenStopped = true
         getValueForLabel()
@@ -41,14 +41,14 @@ class DetailEpisodeViewController: UIViewController {
         nameShowLabel.text = episode.show.name
         nameEpisodeLabel.text = episode.name
         timeLabel.text = episode.airtime
-//        daysLabel.text = episode.show.schedule.days.joined(separator: ", ")
+        daysLabel.text = episode.show.schedule.days.joined(separator: ", ")
         
-        let summaryEpisode = episode.summary.replacingOccurrences(
+        let summaryEpisode = episode.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-        summaryLabel.text = summaryEpisode
+        summaryLabel.text = summaryEpisode ?? Plugs.summaryPlug.rawValue
     }
     
     private func getValueForImageView() {

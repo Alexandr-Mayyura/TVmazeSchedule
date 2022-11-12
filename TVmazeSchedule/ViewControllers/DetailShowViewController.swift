@@ -61,10 +61,7 @@ class DetailShowViewController: UIViewController {
         }
     }
     
-
     @IBAction func dismissView() {
         dismiss(animated: true)
     }
-    
-
 }

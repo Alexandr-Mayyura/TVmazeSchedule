@@ -24,16 +24,14 @@ class NetworkManager {
     
     private init() {}
     
-    
-    func fetch(from url: String, completion: @escaping (Result<[Show], AFError>) -> Void) {
+    func fetchEpisode(from url: String, completion: @escaping (Result<[EpisodeInfo], AFError>) -> Void) {
         
         AF.request(url)
             .validate()
             .responseJSON { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    let shows = Show.getShows(from: value)
-                    print(shows)
+                    let shows = EpisodeInfo.getEpisodes(from: value)
                     completion(.success(shows))
                 case .failure(let error):
                     completion(.failure(error))
@@ -41,21 +39,32 @@ class NetworkManager {
             }
     }
     
-    func fetchImage(from url: String?, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    func fetchShow(from url: String, completion: @escaping (Result<[Show], AFError>) -> Void) {
         
-        guard let url = URL(string: url ?? "") else {
-            completion(.failure(.invalidURL))
-            return
-        }
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let shows = Show.getShows(from: value)
+                    completion(.success(shows))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    func fetchImage(from url: String?, completion: @escaping (Result<Data, AFError>) -> Void) {
         
-        DispatchQueue.global().async {
-            guard let dataImage = try? Data(contentsOf: url) else {
-                completion(.failure(.noData))
-                return
+        AF.request(url ?? "")
+            .validate()
+            .responseData { dataResponse in
+                switch dataResponse.result {
+                case .success(let imageData):
+                    completion(.success(imageData))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-            DispatchQueue.main.async {
-                completion(.success(dataImage))
-            }
-        }
     }
 }
