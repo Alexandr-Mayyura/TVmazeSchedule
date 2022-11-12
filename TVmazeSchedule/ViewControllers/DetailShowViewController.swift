@@ -9,6 +9,8 @@ import UIKit
 
 class DetailShowViewController: UIViewController {
     
+    @IBOutlet var ratingLabel: UILabel!
+    @IBOutlet var genresLabel: UILabel!
     @IBOutlet var nameShowLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
@@ -26,7 +28,7 @@ class DetailShowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         officialSiteTextView.dataDetectorTypes = .link
-        officialSiteTextView.linkTextAttributes = [.foregroundColor: UIColor.green, .underlineStyle: NSUnderlineStyle.single.rawValue]
+        officialSiteTextView.linkTextAttributes = [.underlineStyle: NSUnderlineStyle.single.rawValue]
         
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidesWhenStopped = true
@@ -36,9 +38,20 @@ class DetailShowViewController: UIViewController {
     }
     
     private func getValueForLabel() {
+        switch show.rating.average {
+        case 9...10:
+            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}\u{2B50}\u{2B50}"
+        case 8...9:
+            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}\u{2B50}"
+        case 7...8:
+            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}"
+        default:
+            ratingLabel.text = "Rating: \(show.rating.average)"
+        }
         nameShowLabel.text = show.name
         officialSiteTextView.text = show.officialSite
-        typeLabel.text = show.type
+        typeLabel.text = "Type: \(show.type)"
+        genresLabel.text = "Genre: \(show.genres.joined(separator: ", "))"
         
         let summaryEpisode = show.summary.replacingOccurrences(
             of: "<[^>]+>",

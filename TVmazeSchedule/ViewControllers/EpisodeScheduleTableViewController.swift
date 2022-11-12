@@ -27,15 +27,7 @@ class EpisodeScheduleTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
         guard let cell = cell as? ScheduleCell else { return UITableViewCell() }
         let schedule = episodeInfo[indexPath.row]
-        let timeZoneNetwork = schedule.show.network.country.timezone
-        let time = dateFormattedFrom(
-            string: schedule.airstamp,
-            timeZone: timeZoneNetwork
-    )
-
-        cell.timeLabel.text = time
-        cell.nameShowLabel.text = schedule.show.name
-        cell.nameEpisodeLabel.text = schedule.name
+        cell.configure(with: schedule)
         return cell
     }
     
@@ -77,19 +69,5 @@ extension EpisodeScheduleTableViewController {
                 print(error.localizedDescription)
             }
         }
-    }
-}
-
-// MARK: DateFormatter
-extension EpisodeScheduleTableViewController {
-    func dateFormattedFrom(string: String, timeZone: String) -> String {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        guard let data = dateFormatter.date(from: string) else { return "" }
-        dateFormatter.timeZone = TimeZone(identifier: timeZone)
-        dateFormatter.dateFormat = "HH:mm"
-        let dateForm = dateFormatter.string(from: data)
-        return dateForm
     }
 }

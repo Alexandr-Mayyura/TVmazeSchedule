@@ -13,14 +13,16 @@ struct EpisodeInfo {
     let show: Show
     let airstamp: String
     let airtime: String
+    let type: String
     
     init(episodeInfoData: [String: Any]) {
         name = episodeInfoData["name"] as? String ?? ""
-        summary = episodeInfoData["summary"] as? String ?? ""
+        summary = episodeInfoData["summary"] as? String ?? Plugs.summaryPlug.rawValue
         let showData = episodeInfoData["show"] as? [String: Any] ?? [:]
         show = Show(showData: showData)
         airtime = episodeInfoData["airtime"] as? String ?? ""
         airstamp = episodeInfoData["airstamp"] as? String ?? ""
+        type = episodeInfoData["type"] as? String ?? ""
     }
     
     static func getEpisodes(from value: Any) -> [EpisodeInfo] {
@@ -37,12 +39,15 @@ struct Show {
     let type: String
     let schedule: Schedule
     let network : Network
+    let genres: [String]
+    let rating: Rating
     
     init(showData: [String: Any]) {
         name = showData["name"] as? String ?? ""
         summary = showData["summary"] as? String ?? ""
         officialSite = showData["officialSite"] as? String ?? ""
         type = showData["type"] as? String ?? ""
+        genres = showData["genres"] as? [String] ?? [""]
         
         let imageData = showData["image"] as? [String: Any] ?? [:]
         image = ImageIcon(imageData: imageData)
@@ -52,12 +57,23 @@ struct Show {
         
         let networkData = showData["network"] as? [String: Any] ?? [:]
         network = Network(networkData: networkData)
+        
+        let ratingData = showData["rating"] as? [String: Any] ?? [:]
+        rating = Rating(averageData: ratingData)
     }
     
     static func getShows(from value: Any) -> [Show] {
         guard let showData = value as? [[String: Any]] else { return [] }
         return showData.map { Show(showData: $0)
         }
+    }
+}
+
+struct Rating {
+    let average: Double
+    
+    init(averageData: [String: Any]) {
+        average = averageData["average"] as? Double ?? 0.0
     }
 }
 

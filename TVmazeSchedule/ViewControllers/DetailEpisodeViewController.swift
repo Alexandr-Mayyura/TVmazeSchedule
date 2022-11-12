@@ -17,6 +17,8 @@ class DetailEpisodeViewController: UIViewController {
         }
     }
     
+    @IBOutlet var officialSiteTextView: UITextView!
+    @IBOutlet var typeLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var daysLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
@@ -27,6 +29,9 @@ class DetailEpisodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        officialSiteTextView.dataDetectorTypes = .link
+        officialSiteTextView.linkTextAttributes = [.underlineStyle: NSUnderlineStyle.single.rawValue]
+        
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidesWhenStopped = true
         getValueForLabel()
@@ -40,15 +45,16 @@ class DetailEpisodeViewController: UIViewController {
     private func getValueForLabel() {
         nameShowLabel.text = episode.show.name
         nameEpisodeLabel.text = episode.name
-        timeLabel.text = episode.airtime
-        daysLabel.text = episode.show.schedule.days.joined(separator: ", ")
-        
+        timeLabel.text = "Time: \(episode.airtime)"
+        daysLabel.text = "Days: \(episode.show.schedule.days.joined(separator: ", "))"
+        officialSiteTextView.text = episode.show.officialSite
+        typeLabel.text = "Type: \(episode.type)"
         let summaryEpisode = episode.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-        summaryLabel.text = summaryEpisode ?? Plugs.summaryPlug.rawValue
+        summaryLabel.text = summaryEpisode
     }
     
     private func getValueForImageView() {
