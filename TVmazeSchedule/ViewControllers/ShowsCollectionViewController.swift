@@ -20,12 +20,12 @@ class ShowsCollectionViewController: UIViewController {
         return searchController.isActive && !searchBarIsEmpty
     }
     
-    private var episodes: [Show] = []
-    private var filteredCharacter: [Show] = []
+    private var shows: [Show] = []
+    private var filteredShows: [Show] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchEpisodeSchedule()
+        fetchShow()
         collectionView.dataSource = self
         collectionView.delegate = self
         setupSearchController()
@@ -36,8 +36,8 @@ class ShowsCollectionViewController: UIViewController {
         guard let detailShowVC = segue.destination as? DetailShowViewController else { return }
         indexPaths.forEach { indexPath in
             let show = isFiltering
-            ? filteredCharacter[indexPath.item]
-            : episodes[indexPath.item]
+            ? filteredShows[indexPath.item]
+            : shows[indexPath.item]
             detailShowVC.show = show
         }
     }
@@ -60,7 +60,7 @@ class ShowsCollectionViewController: UIViewController {
 //MARK: CollectionView Data Source
 extension ShowsCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        isFiltering ? filteredCharacter.count : episodes.count
+        isFiltering ? filteredShows.count : shows.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,8 +68,8 @@ extension ShowsCollectionViewController: UICollectionViewDataSource {
         guard let cell = cell as? ShowCell else { return UICollectionViewCell() }
         
         let show = isFiltering
-        ? filteredCharacter[indexPath.item]
-        : episodes[indexPath.item]
+        ? filteredShows[indexPath.item]
+        : shows[indexPath.item]
         cell.configure(with: show)
         return cell
     }
@@ -84,12 +84,12 @@ extension ShowsCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: Network Methods
 extension ShowsCollectionViewController {
-    private func fetchEpisodeSchedule() {
+    private func fetchShow() {
         
         NetworkManager.shared.fetchShow(from: Link.showsURL.rawValue) { [weak self] result in
             switch result {
             case .success(let schedule):
-                self?.episodes = schedule
+                self?.shows = schedule
                 self?.collectionView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -105,7 +105,7 @@ extension ShowsCollectionViewController: UISearchResultsUpdating {
     }
     
     private func filterContentForSearchText(_ searchText: String) {
-        filteredCharacter = episodes.filter { character in
+        filteredShows = shows.filter { character in
             character.name.lowercased().contains(searchText.lowercased())
         }
         
