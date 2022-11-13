@@ -18,7 +18,7 @@
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
 
 ##### Frameworks: 
-Alamofir 5.0.0<br/>SpringAnimation main
+UIKit<br/>Alamofir 5.0.0<br/>SpringAnimation main
 
 ##### IOS version: 
 15.5<br/>
