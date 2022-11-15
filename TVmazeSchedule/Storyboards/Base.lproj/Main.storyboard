@@ -47,24 +47,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="5n6-Jh-H6p">
-                                                    <rect key="frame" x="62" y="84.5" width="20" height="20"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="cym-cE-iyR" secondAttribute="trailing" id="00k-G4-Qx1"/>
                                             <constraint firstItem="3J4-Ye-GHc" firstAttribute="leading" secondItem="Jc4-OZ-My0" secondAttribute="leading" id="DLU-IX-h5A"/>
-                                            <constraint firstItem="5n6-Jh-H6p" firstAttribute="centerX" secondItem="Jc4-OZ-My0" secondAttribute="centerX" id="E8Z-gi-vnm"/>
                                             <constraint firstItem="cym-cE-iyR" firstAttribute="top" secondItem="3J4-Ye-GHc" secondAttribute="bottom" constant="10" id="GlS-96-Q7M"/>
                                             <constraint firstItem="cym-cE-iyR" firstAttribute="leading" secondItem="Jc4-OZ-My0" secondAttribute="leading" id="PUv-QJ-P77"/>
                                             <constraint firstAttribute="trailing" secondItem="3J4-Ye-GHc" secondAttribute="trailing" id="YQe-c0-0he"/>
-                                            <constraint firstItem="5n6-Jh-H6p" firstAttribute="centerY" secondItem="Jc4-OZ-My0" secondAttribute="centerY" id="lOc-mF-TSq"/>
                                             <constraint firstItem="3J4-Ye-GHc" firstAttribute="top" secondItem="Jc4-OZ-My0" secondAttribute="top" id="tnv-8a-wsA"/>
                                         </constraints>
                                         <size key="customSize" width="144" height="189"/>
                                         <connections>
-                                            <outlet property="activityIndicatorView" destination="5n6-Jh-H6p" id="VgX-bu-eSu"/>
                                             <outlet property="showImageView" destination="3J4-Ye-GHc" id="WXG-Wz-0JN"/>
                                             <outlet property="showName" destination="cym-cE-iyR" id="kHD-gm-Lif"/>
                                             <segue destination="XgK-eC-DJQ" kind="presentation" id="1oZ-7P-rEo"/>
