@@ -32,39 +32,42 @@ class DetailShowViewController: UIViewController {
         
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidesWhenStopped = true
-        getValueForLabel()
         getValueForImageView()
-        
+        getValueForLabel()
     }
     
     private func getValueForLabel() {
-        guard let rating = show.rating?.average else { return }
-        switch rating {
-        case 9...10:
-            ratingLabel.text = "Rating: \(rating) \u{2B50}\u{2B50}\u{2B50}"
-        case 8...9:
-            ratingLabel.text = "Rating: \(rating) \u{2B50}\u{2B50}"
-        case 7...8:
-            ratingLabel.text = "Rating: \(rating) \u{2B50}"
-        default:
-            ratingLabel.text = "Rating: \(rating)"
-        }
+        
         nameShowLabel.text = show.name
-        officialSiteTextView.text = show.officialSite
-        typeLabel.text = "Type: \(show.type ?? "No type")"
-        genresLabel.text = "Genre: \(show.genres?.joined(separator: ", ") ?? "")"
+        officialSiteTextView.text = show.officialSite ?? "Not link"
+        typeLabel.text = "Type: \(show.type ?? "not type")"
+        genresLabel.text = "Genre: \(show.genres?.joined(separator: ", ") ?? "not genre")"
 //
         let summaryEpisode = show.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-
         summaryLabel.text = summaryEpisode
+        
+        if let rating = show.rating?.average {
+            switch rating {
+            case 9...10:
+                ratingLabel.text = "Rating: \(rating) \u{2B50}\u{2B50}\u{2B50}"
+            case 8...9:
+                ratingLabel.text = "Rating: \(rating) \u{2B50}\u{2B50}"
+            case 7...8:
+                ratingLabel.text = "Rating: \(rating) \u{2B50}"
+            default:
+                ratingLabel.text = "Rating: \(rating)"
+            }
+        } else {
+            ratingLabel.text = "Rating: not rating"
+        }
     }
     
     private func getValueForImageView() {
-        NetworkManager.shared.fetchImage(from: show.image.medium) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: show.image?.medium) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.imageShowImageView.image = UIImage(data: imageData)

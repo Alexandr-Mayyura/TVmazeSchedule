@@ -72,12 +72,12 @@ class ShowsCollectionViewController: UIViewController {
         }
 
         let ratingMax = UIAction(title: "Rating  \u{142F}") { [weak self] _ in
-            self?.shows.sort { $0.rating?.average ?? 1 > $1.rating?.average ?? 0 }
+            self?.shows.sort { $0.rating?.average ?? 0 > $1.rating?.average ?? 0 }
             self?.collectionView.reloadData()
         }
 
         let ratingMin = UIAction(title: "Rating  \u{1431}") { [weak self] _ in
-            self?.shows.sort { $0.rating?.average ?? 0 < $1.rating?.average ?? 1 }
+            self?.shows.sort { $0.rating?.average ?? 0 < $1.rating?.average ?? 0 }
             self?.collectionView.reloadData()
         }
        let menu = UIMenu(children: [nameMax, nameMin, ratingMax, ratingMin])

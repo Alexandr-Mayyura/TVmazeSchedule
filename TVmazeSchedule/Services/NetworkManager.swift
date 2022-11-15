@@ -18,21 +18,6 @@ class NetworkManager {
     
     private init() {}
     
-//    func fetchEpisode(from url: String, completion: @escaping (Result<[EpisodeInfo], AFError>) -> Void) {
-//
-//        AF.request(url)
-//            .validate()
-//            .responseJSON { dataResponse in
-//                switch dataResponse.result {
-//                case .success(let value):
-//                    let shows = EpisodeInfo.getEpisodes(from: value)
-//                    completion(.success(shows))
-//                case .failure(let error):
-//                    completion(.failure(error))
-//                }
-//            }
-//    }
-    
     func fetch<T: Decodable>(_ type: T.Type, from url: String, completion: @escaping (Result<[T], AFError>) -> Void) {
         
         AF.request(url)

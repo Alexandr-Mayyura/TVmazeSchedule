@@ -10,7 +10,7 @@ import Foundation
 struct EpisodeInfo: Decodable {
     let name: String
     let summary: String?
-    let show: Show
+    let show: Show?
     let airstamp: String?
     let airtime: String?
     let type: String?
@@ -19,7 +19,7 @@ struct EpisodeInfo: Decodable {
 struct Show: Decodable {
     let name: String
     let summary: String?
-    let image: ImageIcon
+    let image: ImageIcon?
     let officialSite: String?
     let type: String?
     let schedule: Schedule?
@@ -33,23 +33,23 @@ struct Rating: Decodable {
 }
 
 struct Schedule: Decodable {
-    let time: String
+    let time: String?
     let days: [String]
 
 }
 
 struct ImageIcon: Decodable {
-    let medium: String
+    let medium: String?
 
 }
 
 struct Network: Decodable {
-    let country: Country
+    let country: Country?
 
 }
 
 struct Country: Decodable {
-    let timezone: String
+    let timezone: String?
 
 }
 

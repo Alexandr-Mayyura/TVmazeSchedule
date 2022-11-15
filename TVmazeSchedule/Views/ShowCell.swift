@@ -19,7 +19,7 @@ class ShowCell: UICollectionViewCell {
     
     func configure(with show: Show) {
         showName.text = show.name
-        guard  let url = URL(string: show.image.medium) else { return }
+        guard  let url = URL(string: show.image?.medium ?? "") else { return }
         let processor = DownsamplingImageProcessor(size: showImageView.bounds.size)
         showImageView.kf.indicatorType = .activity
         showImageView.kf.setImage(with: url, options: [

@@ -20,7 +20,7 @@ class ScheduleCell: UITableViewCell {
     private var spinnerView = UIActivityIndicatorView()
     
     func configure(with episode: EpisodeInfo) {
-        let timeZoneNetwork = episode.show.network?.country.timezone ?? ""
+        let timeZoneNetwork = episode.show?.network?.country?.timezone ?? ""
         let time = dateFormattedFrom(
             string: episode.airstamp ?? "",
             timeZone: timeZoneNetwork
@@ -28,10 +28,10 @@ class ScheduleCell: UITableViewCell {
         
         timeLabel.text = time
         nameEpisodeLabel.text = episode.name
-        nameShowLabel.text = episode.show.name
+        nameShowLabel.text = episode.show?.name
         showSpinner(in: showImageView)
         
-        let url = episode.show.image.medium
+        let url = episode.show?.image?.medium
         NetworkManager.shared.fetchImage(from: url) { [weak self] result in
             switch result {
             case .success(let imageData):
