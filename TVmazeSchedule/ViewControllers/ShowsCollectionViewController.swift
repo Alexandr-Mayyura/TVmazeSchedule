@@ -22,6 +22,7 @@ class ShowsCollectionViewController: UIViewController {
     
     private var shows: [Show] = []
     private var filteredShows: [Show] = []
+    private var sortedShows : [Show] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ShowsCollectionViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         setupSearchController()
+        setupButtonMenu()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,6 +57,34 @@ class ShowsCollectionViewController: UIViewController {
             textField.textColor = .white
         }
     }
+    
+    private func setupButtonMenu() {
+        
+        let nameMax = UIAction(title: "A - z") { [weak self] _ in
+            self?.shows.sort { $0.name < $1.name }
+            self?.collectionView.reloadData()
+        }
+        
+        let nameMin = UIAction(title: "Z - a") { [weak self] _ in
+            self?.shows.sort { $0.name > $1.name }
+            self?.collectionView.reloadData()
+        }
+        
+        let ratingMax = UIAction(title: "Rating 10 > 0") { [weak self] _ in
+            self?.shows.sort { $0.rating.average > $1.rating.average }
+            self?.collectionView.reloadData()
+        }
+        
+        let ratingMin = UIAction(title: "Rating 0 > 10") { [weak self] _ in
+            self?.shows.sort { $0.rating.average < $1.rating.average }
+            self?.collectionView.reloadData()
+        }
+       let menu = UIMenu(children: [nameMax, nameMin, ratingMax, ratingMin])
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Sort",
+            menu: menu
+        )
+    }
 }
 
 //MARK: CollectionView Data Source
@@ -66,7 +96,7 @@ extension ShowsCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "showCell", for: indexPath)
         guard let cell = cell as? ShowCell else { return UICollectionViewCell() }
-        
+       
         let show = isFiltering
         ? filteredShows[indexPath.item]
         : shows[indexPath.item]
