@@ -20,6 +20,7 @@
 		1F8D34E9291A7AC100CE6666 /* DetailEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8D34E8291A7AC100CE6666 /* DetailEpisodeViewController.swift */; };
 		1F8D34EC291AB14100CE6666 /* ShowsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8D34EB291AB14100CE6666 /* ShowsCollectionViewController.swift */; };
 		1F8D34F0291ABFBA00CE6666 /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8D34EF291ABFBA00CE6666 /* ShowCell.swift */; };
+		1F97541129238EFA002A9D3E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1F97541029238EFA002A9D3E /* Kingfisher */; };
 		1FAC62E7291AF0E400274E4F /* DetailShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC62E6291AF0E400274E4F /* DetailShowViewController.swift */; };
 		1FC14641291C233200718B20 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC14640291C233200718B20 /* PreviewViewController.swift */; };
 		1FC14647291C2DAA00718B20 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 1FC14646291C2DAA00718B20 /* SpringAnimation */; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F97541129238EFA002A9D3E /* Kingfisher in Frameworks */,
 				1FC14647291C2DAA00718B20 /* SpringAnimation in Frameworks */,
 				1FF2FD9E291EF4EE00AC9C0C /* Alamofire in Frameworks */,
 			);
@@ -173,6 +175,7 @@
 			packageProductDependencies = (
 				1FC14646291C2DAA00718B20 /* SpringAnimation */,
 				1FF2FD9D291EF4EE00AC9C0C /* Alamofire */,
+				1F97541029238EFA002A9D3E /* Kingfisher */,
 			);
 			productName = TVmazeSchedule;
 			productReference = 1F6CF79B291474D500AD28A7 /* TVmazeSchedule.app */;
@@ -205,6 +208,7 @@
 			packageReferences = (
 				1FC14642291C2A1200718B20 /* XCRemoteSwiftPackageReference "SpringAnimation" */,
 				1FF2FD9C291EF4EE00AC9C0C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1F97540F29238EFA002A9D3E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 1F6CF79C291474D500AD28A7 /* Products */;
 			projectDirPath = "";
@@ -466,6 +470,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1F97540F29238EFA002A9D3E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		1FC14642291C2A1200718B20 /* XCRemoteSwiftPackageReference "SpringAnimation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LexDeBash/SpringAnimation.git";
@@ -485,6 +497,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1F97541029238EFA002A9D3E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F97540F29238EFA002A9D3E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		1FC14646291C2DAA00718B20 /* SpringAnimation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1FC14642291C2A1200718B20 /* XCRemoteSwiftPackageReference "SpringAnimation" */;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShowCell: UICollectionViewCell {
     
@@ -15,27 +16,19 @@ class ShowCell: UICollectionViewCell {
             showImageView.layer.cornerRadius = 8
         }
     }
-
-    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
-    
-    override func awakeFromNib() {
-        activityIndicatorView.startAnimating()
-        activityIndicatorView.hidesWhenStopped = true
-    }
     
     func configure(with show: Show) {
         showName.text = show.name
-        let url = show.image.medium
-        
-        NetworkManager.shared.fetchImage(from: url) { [weak self] result in
-            switch result {
-            case .success(let imageData):
-                self?.showImageView.image = UIImage(data: imageData)
-                self?.activityIndicatorView.stopAnimating()
-            case .failure(let error):
-                print(error)
-            }
-        }
+        guard  let url = URL(string: show.image.medium) else { return }
+        let processor = DownsamplingImageProcessor(size: showImageView.bounds.size)
+        showImageView.kf.indicatorType = .activity
+        showImageView.kf.setImage(with: url, options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ]
+        )
     }
 }
 
