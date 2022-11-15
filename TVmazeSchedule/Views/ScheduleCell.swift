@@ -20,9 +20,9 @@ class ScheduleCell: UITableViewCell {
     private var spinnerView = UIActivityIndicatorView()
     
     func configure(with episode: EpisodeInfo) {
-        let timeZoneNetwork = episode.show.network.country.timezone
+        let timeZoneNetwork = episode.show.network?.country.timezone ?? ""
         let time = dateFormattedFrom(
-            string: episode.airstamp,
+            string: episode.airstamp ?? "",
             timeZone: timeZoneNetwork
         )
         

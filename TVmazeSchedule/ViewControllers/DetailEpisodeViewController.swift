@@ -45,10 +45,10 @@ class DetailEpisodeViewController: UIViewController {
     private func getValueForLabel() {
         nameShowLabel.text = episode.show.name
         nameEpisodeLabel.text = episode.name
-        timeLabel.text = "Time: \(episode.airtime)"
-        daysLabel.text = "Days: \(episode.show.schedule.days.joined(separator: ", "))"
+        timeLabel.text = "Time: \(episode.airtime ?? "No time")"
+        daysLabel.text = "Days: \(episode.show.schedule?.days.joined(separator: ", ") ?? "No day")"
         officialSiteTextView.text = episode.show.officialSite
-        typeLabel.text = "Type: \(episode.type)"
+        typeLabel.text = "Type: \(episode.type ?? "No type")"
         let summaryEpisode = episode.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",

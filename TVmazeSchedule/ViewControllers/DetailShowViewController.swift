@@ -38,27 +38,28 @@ class DetailShowViewController: UIViewController {
     }
     
     private func getValueForLabel() {
-        switch show.rating.average {
+        guard let rating = show.rating?.average else { return }
+        switch rating {
         case 9...10:
-            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}\u{2B50}\u{2B50}"
+            ratingLabel.text = "Rating: \(rating) \u{2B50}\u{2B50}\u{2B50}"
         case 8...9:
-            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}\u{2B50}"
+            ratingLabel.text = "Rating: \(rating) \u{2B50}\u{2B50}"
         case 7...8:
-            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}"
+            ratingLabel.text = "Rating: \(rating) \u{2B50}"
         default:
-            ratingLabel.text = "Rating: \(show.rating.average)"
+            ratingLabel.text = "Rating: \(rating)"
         }
         nameShowLabel.text = show.name
         officialSiteTextView.text = show.officialSite
-        typeLabel.text = "Type: \(show.type)"
-        genresLabel.text = "Genre: \(show.genres.joined(separator: ", "))"
-        
-        let summaryEpisode = show.summary.replacingOccurrences(
+        typeLabel.text = "Type: \(show.type ?? "No type")"
+        genresLabel.text = "Genre: \(show.genres?.joined(separator: ", ") ?? "")"
+//
+        let summaryEpisode = show.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-        
+
         summaryLabel.text = summaryEpisode
     }
     
@@ -73,7 +74,7 @@ class DetailShowViewController: UIViewController {
             }
         }
     }
-    
+
     @IBAction func dismissView() {
         dismiss(animated: true)
     }

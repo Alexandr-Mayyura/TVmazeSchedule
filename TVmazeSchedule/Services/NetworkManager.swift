@@ -18,30 +18,29 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchEpisode(from url: String, completion: @escaping (Result<[EpisodeInfo], AFError>) -> Void) {
-        
-        AF.request(url)
-            .validate()
-            .responseJSON { dataResponse in
-                switch dataResponse.result {
-                case .success(let value):
-                    let shows = EpisodeInfo.getEpisodes(from: value)
-                    completion(.success(shows))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
-    }
+//    func fetchEpisode(from url: String, completion: @escaping (Result<[EpisodeInfo], AFError>) -> Void) {
+//
+//        AF.request(url)
+//            .validate()
+//            .responseJSON { dataResponse in
+//                switch dataResponse.result {
+//                case .success(let value):
+//                    let shows = EpisodeInfo.getEpisodes(from: value)
+//                    completion(.success(shows))
+//                case .failure(let error):
+//                    completion(.failure(error))
+//                }
+//            }
+//    }
     
-    func fetchShow(from url: String, completion: @escaping (Result<[Show], AFError>) -> Void) {
+    func fetch<T: Decodable>(_ type: T.Type, from url: String, completion: @escaping (Result<[T], AFError>) -> Void) {
         
         AF.request(url)
             .validate()
-            .responseJSON { dataResponse in
+            .responseDecodable(of: [T].self) { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
-                    let shows = Show.getShows(from: value)
-                    completion(.success(shows))
+                    completion(.success(value))
                 case .failure(let error):
                     completion(.failure(error))
                 }

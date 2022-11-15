@@ -59,7 +59,7 @@ class EpisodeScheduleTableViewController: UITableViewController {
 // MARK: Network Methods
 extension EpisodeScheduleTableViewController {
     private func fetchEpisodeSchedule() {
-        NetworkManager.shared.fetchEpisode(from: Link.scheduleURL.rawValue) { [weak self] result in
+        NetworkManager.shared.fetch(EpisodeInfo.self, from: Link.scheduleURL.rawValue) { [weak self] result in
             switch result {
             case .success(let schedule):
                 self?.episodeInfo = schedule
