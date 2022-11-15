@@ -30,7 +30,7 @@ class ShowsCollectionViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         setupSearchController()
-        setupButtonMenu()
+        setupButtonMenuSort()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,7 +58,7 @@ class ShowsCollectionViewController: UIViewController {
         }
     }
     
-    private func setupButtonMenu() {
+    private func setupButtonMenuSort() {
         
         let nameMax = UIAction(title: "A - z") { [weak self] _ in
             self?.shows.sort { $0.name < $1.name }
@@ -70,12 +70,12 @@ class ShowsCollectionViewController: UIViewController {
             self?.collectionView.reloadData()
         }
         
-        let ratingMax = UIAction(title: "Rating 10 > 0") { [weak self] _ in
+        let ratingMax = UIAction(title: "Rating  \u{142F}") { [weak self] _ in
             self?.shows.sort { $0.rating.average > $1.rating.average }
             self?.collectionView.reloadData()
         }
         
-        let ratingMin = UIAction(title: "Rating 0 > 10") { [weak self] _ in
+        let ratingMin = UIAction(title: "Rating  \u{1431}") { [weak self] _ in
             self?.shows.sort { $0.rating.average < $1.rating.average }
             self?.collectionView.reloadData()
         }
@@ -115,7 +115,6 @@ extension ShowsCollectionViewController: UICollectionViewDelegateFlowLayout {
 //MARK: Network Methods
 extension ShowsCollectionViewController {
     private func fetchShow() {
-        
         NetworkManager.shared.fetchShow(from: Link.showsURL.rawValue) { [weak self] result in
             switch result {
             case .success(let schedule):
