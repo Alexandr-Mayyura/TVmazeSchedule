@@ -250,7 +250,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="scheduleCell" id="djM-tf-gdx" customClass="ScheduleCell" customModule="TVmazeSchedule" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="scheduleCell" focusStyle="custom" id="djM-tf-gdx" customClass="ScheduleCell" customModule="TVmazeSchedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="djM-tf-gdx" id="PCN-ej-3py">
@@ -300,7 +300,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="A7f-Av-EDh" secondAttribute="trailing" constant="10" id="zzE-Yq-uG9"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" name="Color"/>
                                 <connections>
                                     <outlet property="nameEpisodeLabel" destination="hoO-3g-mBS" id="Dfa-dE-iVV"/>
                                     <outlet property="nameShowLabel" destination="608-7A-ZG9" id="Dqc-b8-33p"/>
@@ -543,11 +543,11 @@
         <namedColor name="AccentColor">
             <color red="0.31299999356269836" green="0.68400001525878906" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Color">
+            <color red="0.31299999356269836" green="0.68400001525878906" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

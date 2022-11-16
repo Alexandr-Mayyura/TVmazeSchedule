@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ScheduleCell: UITableViewCell {
     
@@ -30,17 +31,17 @@ class ScheduleCell: UITableViewCell {
         nameEpisodeLabel.text = episode.name
         nameShowLabel.text = episode.show?.name
         showSpinner(in: showImageView)
-        
-        let url = episode.show?.image?.medium
-        NetworkManager.shared.fetchImage(from: url) { [weak self] result in
-            switch result {
-            case .success(let imageData):
-                self?.showImageView.image = UIImage(data: imageData)
-                self?.spinnerView.stopAnimating()
-            case .failure(let error):
-                print(error)
-            }
-        }
+    
+        guard  let url = URL(string: episode.show?.image?.medium ?? "") else { return }
+        let processor = DownsamplingImageProcessor(size: showImageView.bounds.size)
+        showImageView.kf.indicatorType = .activity
+        showImageView.kf.setImage(with: url, options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ]
+        )
     }
     
     private func showSpinner(in view: UIView) {
