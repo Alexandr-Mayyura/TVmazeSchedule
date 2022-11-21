@@ -45,16 +45,16 @@ class DetailEpisodeViewController: UIViewController {
     private func getValueForLabel() {
         nameShowLabel.text = episode.show?.name
         nameEpisodeLabel.text = episode.name
-        timeLabel.text = "Time: \(episode.airtime ?? "not time")"
-        daysLabel.text = "Days: \(episode.show?.schedule?.days.joined(separator: ", ") ?? "not day")"
-        officialSiteTextView.text = episode.show?.officialSite ?? "not link"
-        typeLabel.text = "Type: \(episode.type ?? "not type")"
+        timeLabel.text = "Time: \(episode.airtime ?? "no time")"
+        daysLabel.text = "Days: \(episode.show?.schedule?.days.joined(separator: ", ") ?? ["no day"].joined())"
+        officialSiteTextView.text = episode.show?.officialSite ?? "no link"
+        typeLabel.text = "Type: \(episode.type ?? "no type")"
         let summaryEpisode = episode.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-        summaryLabel.text = summaryEpisode
+        summaryLabel.text = summaryEpisode ?? Plugs.summaryPlug.rawValue
     }
 }
 

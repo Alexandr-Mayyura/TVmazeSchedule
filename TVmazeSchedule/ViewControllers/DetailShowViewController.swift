@@ -39,10 +39,15 @@ class DetailShowViewController: UIViewController {
     private func getValueForLabel() {
         
         nameShowLabel.text = show.name
-        officialSiteTextView.text = show.officialSite ?? "Not link"
-        typeLabel.text = "Type: \(show.type ?? "not type")"
-        genresLabel.text = "Genre: \(show.genres?.joined(separator: ", ") ?? "not genre")"
-//
+        officialSiteTextView.text = show.officialSite ?? "no link"
+        typeLabel.text = "Type: \(show.type ?? "no type")"
+        
+        if show.genres != [] {
+            genresLabel.text = "Genre: \(show.genres?.joined(separator: ", ") ?? "")"
+        } else {
+            genresLabel.text = "Genre: no genre"
+        }
+        
         let summaryEpisode = show.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
@@ -62,7 +67,7 @@ class DetailShowViewController: UIViewController {
                 ratingLabel.text = "Rating: \(rating)"
             }
         } else {
-            ratingLabel.text = "Rating: not rating"
+            ratingLabel.text = "Rating: no rating"
         }
     }
     

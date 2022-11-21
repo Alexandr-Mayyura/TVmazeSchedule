@@ -143,8 +143,8 @@
 		1F8D34EA291AB11800CE6666 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F8D34E6291A4F8700CE6666 /* ScheduleCell.swift */,
 				1F8D34EF291ABFBA00CE6666 /* ShowCell.swift */,
+				1F8D34E6291A4F8700CE6666 /* ScheduleCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
