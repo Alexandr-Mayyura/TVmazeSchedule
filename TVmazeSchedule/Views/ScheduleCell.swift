@@ -34,6 +34,7 @@ class ScheduleCell: UITableViewCell {
         } else {
             timeLabel.textColor = UIColor(named: "MainColor")
             timeLabel.text = episode.airtime
+
         }
         
         nameEpisodeLabel.text = episode.name
@@ -50,6 +51,16 @@ class ScheduleCell: UITableViewCell {
                 .cacheOriginalImage
             ]
         )
+    }
+    
+    private func showSpinner(in view: UIView) {
+        spinnerView = UIActivityIndicatorView(style: .large)
+        spinnerView.color = .gray
+        spinnerView.startAnimating()
+        spinnerView.center = view.center
+        spinnerView.hidesWhenStopped = true
+
+        view.addSubview(spinnerView)
     }
     
     private func showSpinner(in view: UIView) {
