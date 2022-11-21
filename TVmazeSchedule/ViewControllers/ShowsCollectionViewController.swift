@@ -81,6 +81,7 @@ class ShowsCollectionViewController: UIViewController {
 
             self?.collectionView.reloadData()
         }
+        
        let menu = UIMenu(children: [nameMax, nameMin, ratingMax, ratingMin])
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Sort",
