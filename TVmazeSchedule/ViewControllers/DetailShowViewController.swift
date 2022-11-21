@@ -32,38 +32,47 @@ class DetailShowViewController: UIViewController {
         
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidesWhenStopped = true
-        getValueForLabel()
         getValueForImageView()
-        
+        getValueForLabel()
     }
     
     private func getValueForLabel() {
-        switch show.rating.average {
-        case 9...10:
-            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}\u{2B50}\u{2B50}"
-        case 8...9:
-            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}\u{2B50}"
-        case 7...8:
-            ratingLabel.text = "Rating: \(show.rating.average) \u{2B50}"
-        default:
-            ratingLabel.text = "Rating: \(show.rating.average)"
-        }
-        nameShowLabel.text = show.name
-        officialSiteTextView.text = show.officialSite
-        typeLabel.text = "Type: \(show.type)"
-        genresLabel.text = "Genre: \(show.genres.joined(separator: ", "))"
         
-        let summaryEpisode = show.summary.replacingOccurrences(
+        nameShowLabel.text = show.name
+        officialSiteTextView.text = show.officialSite ?? "no link"
+        typeLabel.text = "Type: \(show.type ?? "no type")"
+        
+        if show.genres != [] {
+            genresLabel.text = "Genre: \(show.genres?.joined(separator: ", ") ?? "")"
+        } else {
+            genresLabel.text = "Genre: no genre"
+        }
+        
+        let summaryEpisode = show.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-        
         summaryLabel.text = summaryEpisode
+        
+        if let rating = show.rating?.average {
+            switch rating {
+            case 9...10:
+                ratingLabel.text = "Rating: \(rating) \u{2B50}\u{2B50}\u{2B50}"
+            case 8...9:
+                ratingLabel.text = "Rating: \(rating) \u{2B50}\u{2B50}"
+            case 7...8:
+                ratingLabel.text = "Rating: \(rating) \u{2B50}"
+            default:
+                ratingLabel.text = "Rating: \(rating)"
+            }
+        } else {
+            ratingLabel.text = "Rating: no rating"
+        }
     }
     
     private func getValueForImageView() {
-        NetworkManager.shared.fetchImage(from: show.image.medium) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: show.image?.medium) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.imageShowImageView.image = UIImage(data: imageData)
@@ -73,7 +82,7 @@ class DetailShowViewController: UIViewController {
             }
         }
     }
-    
+
     @IBAction func dismissView() {
         dismiss(animated: true)
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShowsCollectionViewController: UIViewController {
     
@@ -43,7 +44,7 @@ class ShowsCollectionViewController: UIViewController {
             detailShowVC.show = show
         }
     }
-    
+
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -64,19 +65,20 @@ class ShowsCollectionViewController: UIViewController {
             self?.shows.sort { $0.name < $1.name }
             self?.collectionView.reloadData()
         }
-        
+
         let nameMin = UIAction(title: "Z - a") { [weak self] _ in
             self?.shows.sort { $0.name > $1.name }
             self?.collectionView.reloadData()
         }
-        
+
         let ratingMax = UIAction(title: "Rating  \u{142F}") { [weak self] _ in
-            self?.shows.sort { $0.rating.average > $1.rating.average }
+            self?.shows.sort { $0.rating?.average ?? 0 > $1.rating?.average ?? 0 }
             self?.collectionView.reloadData()
         }
-        
+
         let ratingMin = UIAction(title: "Rating  \u{1431}") { [weak self] _ in
-            self?.shows.sort { $0.rating.average < $1.rating.average }
+            self?.shows.sort { $0.rating?.average ?? 0 < $1.rating?.average ?? 0 }
+
             self?.collectionView.reloadData()
         }
        let menu = UIMenu(children: [nameMax, nameMin, ratingMax, ratingMin])
@@ -115,7 +117,8 @@ extension ShowsCollectionViewController: UICollectionViewDelegateFlowLayout {
 //MARK: Network Methods
 extension ShowsCollectionViewController {
     private func fetchShow() {
-        NetworkManager.shared.fetchShow(from: Link.showsURL.rawValue) { [weak self] result in
+        NetworkManager.shared.fetch(Show.self, from: Link.showsURL.rawValue) { [weak self] result in
+
             switch result {
             case .success(let schedule):
                 self?.shows = schedule

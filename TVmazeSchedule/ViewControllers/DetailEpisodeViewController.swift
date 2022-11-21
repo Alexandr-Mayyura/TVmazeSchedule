@@ -43,25 +43,25 @@ class DetailEpisodeViewController: UIViewController {
     }
     
     private func getValueForLabel() {
-        nameShowLabel.text = episode.show.name
+        nameShowLabel.text = episode.show?.name
         nameEpisodeLabel.text = episode.name
-        timeLabel.text = "Time: \(episode.airtime)"
-        daysLabel.text = "Days: \(episode.show.schedule.days.joined(separator: ", "))"
-        officialSiteTextView.text = episode.show.officialSite
-        typeLabel.text = "Type: \(episode.type)"
+        timeLabel.text = "Time: \(episode.airtime ?? "no time")"
+        daysLabel.text = "Days: \(episode.show?.schedule?.days.joined(separator: ", ") ?? ["no day"].joined())"
+        officialSiteTextView.text = episode.show?.officialSite ?? "no link"
+        typeLabel.text = "Type: \(episode.type ?? "no type")"
         let summaryEpisode = episode.summary?.replacingOccurrences(
             of: "<[^>]+>",
             with: "",
             options: .regularExpression
         )
-        summaryLabel.text = summaryEpisode
+        summaryLabel.text = summaryEpisode ?? Plugs.summaryPlug.rawValue
     }
 }
 
 // MARK: Network Methods
 extension DetailEpisodeViewController {
     private func getValueForImageView() {
-        NetworkManager.shared.fetchImage(from: episode.show.image.medium) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: episode.show?.image?.medium) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.showImageView.image = UIImage(data: imageData)

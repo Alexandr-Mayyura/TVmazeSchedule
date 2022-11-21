@@ -7,38 +7,23 @@
 
 import UIKit
 
-class EpisodeScheduleTableViewController: UITableViewController {
+class EpisodeScheduleTableViewController: UIViewController {
+    
+    @IBOutlet var tableView: UITableView!
 
     private var spinnerView = UIActivityIndicatorView()
     private var episodeInfo: [EpisodeInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 95
         showSpinner(in: tableView)
         fetchEpisodeSchedule()
     }
 
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        episodeInfo.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
-        guard let cell = cell as? ScheduleCell else { return UITableViewCell() }
-        let schedule = episodeInfo[indexPath.row]
-        cell.configure(with: schedule)
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "detailEpisodSegue", sender: nil)
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailEpisodSegue" {
+        if segue.identifier == "detailEpisodeSegue" {
             guard let detailVC = segue.destination as? DetailEpisodeViewController else { return }
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             detailVC.episode = episodeInfo[indexPath.row]
@@ -56,10 +41,33 @@ class EpisodeScheduleTableViewController: UITableViewController {
     }
 }
 
+// MARK: - Table view data source
+extension EpisodeScheduleTableViewController: UITableViewDataSource {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        episodeInfo.count
+    }
+
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
+        guard let cell = cell as? ScheduleCell else { return UITableViewCell() }
+        let episode = episodeInfo[indexPath.row]
+        cell.configure(with: episode)
+        return cell
+    }
+}
+
+// MARK: - Table view delegate
+extension EpisodeScheduleTableViewController: UITableViewDelegate {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailEpisodeSegue", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
 // MARK: Network Methods
 extension EpisodeScheduleTableViewController {
     private func fetchEpisodeSchedule() {
-        NetworkManager.shared.fetchEpisode(from: Link.scheduleURL.rawValue) { [weak self] result in
+        NetworkManager.shared.fetch(EpisodeInfo.self, from: Link.scheduleURL.rawValue) { [weak self] result in
             switch result {
             case .success(let schedule):
                 self?.episodeInfo = schedule
