@@ -20,6 +20,7 @@ The most popular shows in one place.<br/>View basic information about a show or 
 + POST Requests
 + Responce Decodable
 + #### Kingfisher
++ #### Realm
 
 #### Public api:
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
