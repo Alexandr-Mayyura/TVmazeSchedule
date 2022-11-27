@@ -1,7 +1,7 @@
 # TVmazeSchedule
 <div id="header" align="center">
- <img src=https://raw.githubusercontent.com/Alexandr-Mayyura/TVmazeSchedule/main/TVmazeSchedule/Assets.xcassets/tvmLogo.imageset/tvm-header-logo.pn" width="100"/>
-</div>
+ <img src=https://raw.githubusercontent.com/Alexandr-Mayyura/TVmazeSchedule/main/TVmazeSchedule/Assets.xcassets/tvmLogo.imageset/tvm-header-logo.pn" width="100"/> </div>
+
 ## This is a learning project at swiftbook school
 
 + GET Request
