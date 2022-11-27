@@ -1,6 +1,7 @@
 <p align="center">
-<img src="https://static.tvmaze.com/images/tvm-header-logo.png" title="TVmazeSchedule" alt="TVmazeSchedule" width="300" height="80"/>                                                                                                                                  
+<img src="https://static.tvmaze.com/images/tvm-header-logo.png" title="TVmazeSchedule" alt="TVmazeSchedule"/>                                                                                                                                  
 </p>
+
 # TVmazeSchedule
 
 ## This is a learning project
