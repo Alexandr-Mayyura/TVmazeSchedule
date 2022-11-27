@@ -20,7 +20,7 @@
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
 
 ##### Frameworks: 
-UIKit<br/>Alamofire 5.0.0<br/>SpringAnimation
+UIKit<br/>Alamofire 5.0.0<br/>SpringAnimation<br/>Kingfisher
 
 ##### IOS version: 
 15.5<br/>
