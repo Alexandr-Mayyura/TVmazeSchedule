@@ -24,12 +24,12 @@ https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows<br/>
 
 #### :hammer_and_wrench: Languages and Tools :
 
-<a href="">![SWIFT](https://img.shields.io/badge/-SWIFT-orange)</a>
-<a href="">![XCODE](https://img.shields.io/badge/-XCODE-blueviolet)</a>
-<a href="">![IOS](https://img.shields.io/badge/-iOS-blue)</a>
-<a href="">![KINGFISHER](https://img.shields.io/badge/-KINGFISHER-blue)</a>
-<a href="">![ALAMOFIRE](https://img.shields.io/badge/-ALAMOFIRE-orange)</a>
-<a href="">![REALM](https://img.shields.io/badge/-REALM-blueviolet)</a>
+![SWIFT](https://img.shields.io/badge/-SWIFT-orange)
+![XCODE](https://img.shields.io/badge/-XCODE-blueviolet)
+![IOS](https://img.shields.io/badge/-iOS-blue)
+![KINGFISHER](https://img.shields.io/badge/-KINGFISHER-blue)
+![ALAMOFIRE](https://img.shields.io/badge/-ALAMOFIRE-orange)
+![REALM](https://img.shields.io/badge/-REALM-blueviolet)
 
 ##### IOS version: 
 15.5<br/>
