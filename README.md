@@ -22,7 +22,7 @@ The most popular shows in one place.<br/>View basic information about a show or 
 #### Public api:
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows<br/>
 
-#### :hammer_and_wrench: Languages and Tools :
+#### :hammer_and_wrench: Stack :
 
 ![SWIFT](https://img.shields.io/badge/-SWIFT-orange)
 ![XCODE](https://img.shields.io/badge/-XCODE-blueviolet)
