@@ -13,17 +13,14 @@ The most popular shows in one place.<br/>View basic information about a show or 
 + NetworkManager
 + Frameworks
 + Manual parsing JSON
-+ #### Alamofire
 + ResponseJSON
 + Status code
 + Validate
 + POST Requests
 + Responce Decodable
-+ #### Kingfisher
-+ #### Realm
 
 #### Public api:
-https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
+https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows<br/>
 
 #### :hammer_and_wrench: Languages and Tools :
 <div>
