@@ -2,7 +2,7 @@
 <img src="https://static.tvmaze.com/images/tvm-header-logo.png" title="TVmazeSchedule" alt="TVmazeSchedule"/>                                                                                                                                  
 </p>
 
-# TVmazeSchedule
+# TVmazeSchedule App
 
 The most popular shows in one place.<br/>View basic information about a show or episode.<br/>Easy transition to the show's official website.<br/>Show schedule for tonight.
 
