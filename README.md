@@ -20,7 +20,7 @@
 #### Public api:
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
 
-##### Frameworks: 
+### :hammer_and_wrench: Languages and Tools :
 UIKit<br/>Alamofire 5.0.0<br/>SpringAnimation<br/>Kingfisher
 
 ##### IOS version: 
