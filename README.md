@@ -21,6 +21,15 @@
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
 
 ### :hammer_and_wrench: Languages and Tools :
+<div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/apple/apple-original.svg" title="Apple" alt="Apple " width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/swift/swift-original-wordmark.svg"  title="Swift" alt="Swift" width="40" height="40"/>&nbsp;
+<img src="https://raw.githubusercontent.com/Alamofire/Alamofire/master/Resources/AlamofireLogo.png" title="Git" **alt="Git" width="80" height="40"/>
+</div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
+</div>
+
+
 UIKit<br/>Alamofire 5.0.0<br/>SpringAnimation<br/>Kingfisher
 
 ##### IOS version: 
