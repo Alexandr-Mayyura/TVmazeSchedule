@@ -23,12 +23,13 @@ The most popular shows in one place.<br/>View basic information about a show or 
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows<br/>
 
 #### :hammer_and_wrench: Languages and Tools :
-<div>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/swift/swift-original.svg"  title="Swift" alt="Swift" width="30" height="30"/>&nbsp;
-   <img src="https://github.com/onevcat/Kingfisher/blob/master/images/logo.png"  title="Kingfisher" alt="Kingfisher" width="140" height="30"/>&nbsp;
-  <img src="https://github.com/Alamofire/Alamofire/blob/master/Resources/AlamofireLogo.png" title="Alamofire" alt="Alamofire" width="100" height="30"/>&nbsp;
-  <img src="https://raw.githubusercontent.com/realm/realm-swift/master/logo.png" title="Realm" alt="Realm" width="90" height="30"/>
-</div>
+
+<a href="">![SWIFT](https://img.shields.io/badge/-SWIFT-orange)</a>
+<a href="">![XCODE](https://img.shields.io/badge/-XCODE-blueviolet)</a>
+<a href="">![IOS](https://img.shields.io/badge/-iOS-blue)</a>
+<a href="">![KINGFISHER](https://img.shields.io/badge/-KINGFISHER-blue)</a>
+<a href="">![ALAMOFIRE](https://img.shields.io/badge/-ALAMOFIRE-orange)</a>
+<a href="">![REALM](https://img.shields.io/badge/-REALM-perple)</a>
 
 ##### IOS version: 
 15.5<br/>
