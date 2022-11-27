@@ -15,6 +15,7 @@
 + Validate
 + POST Requests
 + Responce Decodable
++ #### Kingfisher
 
 #### Public api:
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
