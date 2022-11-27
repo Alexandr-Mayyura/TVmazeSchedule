@@ -24,7 +24,7 @@ https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
 
 ### :hammer_and_wrench: Languages and Tools :
 <div>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/swift/swift-original-wordmark.svg"  title="Swift" alt="Swift" width="50" height="50"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/swift/swift-original.svg"  title="Swift" alt="Swift" width="50" height="50"/>&nbsp;
   <img src="https://github.com/onevcat/Kingfisher/blob/master/images/logo.png"  title="Kingfisher" alt="Kingfisher" width="100" height="20"/>&nbsp;
   <img src="https://github.com/Alamofire/Alamofire/blob/master/Resources/AlamofireLogo.png" title="Alamofire" alt="Alamofire" width="100" height="20"/>&nbsp;
   <img src="https://raw.githubusercontent.com/realm/realm-swift/master/logo.png" title="Realm" alt="Realm" width="100" height="35"/>&nbsp;
