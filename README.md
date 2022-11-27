@@ -4,7 +4,7 @@
 
 # TVmazeSchedule
 
-The most popular shows in one place.<br/>View basic information about a show or episode.<br/>Easy transition to the show's official website.<br/>Show schedule for tonight.<br/>(learning project)
+The most popular shows in one place.<br/>View basic information about a show or episode.<br/>Easy transition to the show's official website.<br/>Show schedule for tonight.
 
 ## This is a learning project
 
