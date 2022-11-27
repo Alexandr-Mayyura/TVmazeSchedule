@@ -4,6 +4,8 @@
 
 # TVmazeSchedule
 
+The most popular shows in one place. View basic information about a show or episode. Easy transition to the show's official website. Show schedule for tonight.
+
 ## This is a learning project
 
 + GET Request
