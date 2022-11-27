@@ -31,9 +31,6 @@ https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
 <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" alt="Git" width="40" height="40"/>
 </div>
 
-
-UIKit<br/>Alamofire 5.0.0<br/>SpringAnimation<br/>Kingfisher
-
 ##### IOS version: 
 15.5<br/>
 ##### Language version:
