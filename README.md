@@ -24,7 +24,7 @@ The most popular shows in one place.<br/>View basic information about a show or 
 #### Public api:
 https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows
 
-### :hammer_and_wrench: Languages and Tools :
+#### :hammer_and_wrench: Languages and Tools :
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/swift/swift-original.svg"  title="Swift" alt="Swift" width="30" height="30"/>&nbsp;
   <img src="https://github.com/Alamofire/Alamofire/blob/master/Resources/AlamofireLogo.png" title="Alamofire" alt="Alamofire" width="100" height="30"/>&nbsp;
