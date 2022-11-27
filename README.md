@@ -2,7 +2,7 @@
 
 # TVmazeSchedule
 
-## This is a learning project at swiftbook school
+## This is a learning project
 
 + GET Request
 + Parsing JSON
