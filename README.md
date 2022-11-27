@@ -1,7 +1,6 @@
+![alt text])https://raw.githubusercontent.com/Alexandr-Mayyura/TVmazeSchedule/main/TVmazeSchedule/Assets.xcassets/tvmLogo.imageset/tvm-header-logo.png)                                                                                                                                    
+
 # TVmazeSchedule
-<div id="header" align="center">
- <img src=https://raw.githubusercontent.com/Alexandr-Mayyura/TVmazeSchedule/main/TVmazeSchedule/Assets.xcassets/tvmLogo.imageset/tvm-header-logo.png"/>                                                                                                                                      
-</div>
 
 ## This is a learning project at swiftbook school
 
