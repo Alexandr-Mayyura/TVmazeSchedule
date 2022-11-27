@@ -1,5 +1,6 @@
-![alt text](https://raw.githubusercontent.com/Alexandr-Mayyura/TVmazeSchedule/main/TVmazeSchedule/Assets.xcassets/tvmLogo.imageset/tvm-header-logo.png)                                                                                                                                    
-
+<p align="center">
+<img src=https://raw.githubusercontent.com/Alexandr-Mayyura/TVmazeSchedule/main/TVmazeSchedule/Assets.xcassets/tvmLogo.imageset/tvm-header-logo.png" title="TVmazeSchedule" alt="TVmazeSchedule" width="300" height="80"/>                                                                                                                                  
+</p>
 # TVmazeSchedule
 
 ## This is a learning project
