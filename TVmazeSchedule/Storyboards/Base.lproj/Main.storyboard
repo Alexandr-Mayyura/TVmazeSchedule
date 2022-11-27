@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -245,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="55a-Fj-7AZ">
-                                <rect key="frame" x="0.0" y="179" width="375" height="468"/>
+                                <rect key="frame" x="0.0" y="183" width="375" height="464"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scheduleCell" focusStyle="custom" rowHeight="95" id="KM5-R3-1fv" customClass="ScheduleCell" customModule="TVmazeSchedule" customModuleProvider="target">
@@ -313,24 +314,84 @@
                                     <outlet property="delegate" destination="Kgy-Ju-5ea" id="BZL-mX-XmZ"/>
                                 </connections>
                             </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zsq-rp-WkV">
+                                <rect key="frame" x="0.0" y="113" width="375" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="OJW-ix-cnr"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OVg-P9-e0l">
+                                    <size key="itemSize" width="369" height="57"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tickerCell" id="6tT-es-9oq" customClass="TickerCell" customModule="TVmazeSchedule" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1.5" width="369" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qml-a3-s8h">
+                                            <rect key="frame" x="0.0" y="0.0" width="369" height="57"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFe-n5-kdk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="57"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="Djk-y4-Eh6"/>
+                                                        <constraint firstAttribute="width" constant="40" id="zP8-gf-PSH"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uIB-zW-KQy">
+                                                    <rect key="frame" x="50" y="2" width="319" height="53"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="aFe-n5-kdk" secondAttribute="bottom" id="7OV-DV-IO3"/>
+                                                <constraint firstItem="uIB-zW-KQy" firstAttribute="leading" secondItem="aFe-n5-kdk" secondAttribute="trailing" constant="10" id="9jo-o5-2IB"/>
+                                                <constraint firstAttribute="bottom" secondItem="uIB-zW-KQy" secondAttribute="bottom" constant="2" id="HdF-T3-Zs5"/>
+                                                <constraint firstItem="aFe-n5-kdk" firstAttribute="top" secondItem="qml-a3-s8h" secondAttribute="top" id="Kpu-hL-x7V"/>
+                                                <constraint firstItem="aFe-n5-kdk" firstAttribute="leading" secondItem="qml-a3-s8h" secondAttribute="leading" id="Pek-uZ-Nas"/>
+                                                <constraint firstAttribute="trailing" secondItem="uIB-zW-KQy" secondAttribute="trailing" id="WJW-dx-kb0"/>
+                                                <constraint firstItem="uIB-zW-KQy" firstAttribute="top" secondItem="qml-a3-s8h" secondAttribute="top" constant="2" id="uj2-H0-a17"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="369" height="57"/>
+                                        <connections>
+                                            <outlet property="episodeImage" destination="aFe-n5-kdk" id="I6r-QE-8Uh"/>
+                                            <outlet property="episodeNameLabel" destination="uIB-zW-KQy" id="zwm-wb-sSa"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kgy-Ju-5ea" id="z53-P5-3iw"/>
+                                    <outlet property="delegate" destination="Kgy-Ju-5ea" id="3dx-av-Tkc"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B2x-sA-Nb5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="B2x-sA-Nb5" firstAttribute="trailing" secondItem="Zsq-rp-WkV" secondAttribute="trailing" id="3NC-gH-All"/>
+                            <constraint firstItem="Zsq-rp-WkV" firstAttribute="top" secondItem="B2x-sA-Nb5" secondAttribute="top" constant="5" id="6rU-yD-EQP"/>
                             <constraint firstItem="55a-Fj-7AZ" firstAttribute="leading" secondItem="B2x-sA-Nb5" secondAttribute="leading" id="9ZX-Hd-abV"/>
+                            <constraint firstItem="Zsq-rp-WkV" firstAttribute="leading" secondItem="B2x-sA-Nb5" secondAttribute="leading" id="IMK-5R-zma"/>
                             <constraint firstItem="55a-Fj-7AZ" firstAttribute="trailing" secondItem="B2x-sA-Nb5" secondAttribute="trailing" id="Oak-ob-ARQ"/>
-                            <constraint firstItem="55a-Fj-7AZ" firstAttribute="top" secondItem="B2x-sA-Nb5" secondAttribute="top" constant="71" id="d8O-11-qtD"/>
                             <constraint firstAttribute="bottom" secondItem="55a-Fj-7AZ" secondAttribute="bottom" id="lRH-P1-zDI"/>
+                            <constraint firstItem="55a-Fj-7AZ" firstAttribute="top" secondItem="Zsq-rp-WkV" secondAttribute="bottom" constant="10" id="sB1-3A-2WE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule Show" id="Ps6-6g-kgL"/>
                     <connections>
                         <outlet property="tableView" destination="55a-Fj-7AZ" id="eV3-Lx-Cs2"/>
+                        <outlet property="tickerCollectionView" destination="Zsq-rp-WkV" id="fgZ-k8-SxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycq-K0-73e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4009" y="-970"/>
+            <point key="canvasLocation" x="4008.8000000000002" y="-970.16491754122944"/>
         </scene>
         <!--Detail Episode View Controller-->
         <scene sceneID="Ksg-LK-DhI">

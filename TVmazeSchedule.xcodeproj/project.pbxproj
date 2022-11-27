@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F541BBC291B063700479656 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F541BBB291B063700479656 /* DataStore.swift */; };
+		1F55F0732933DE5E00657F3D /* TickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F55F0722933DE5E00657F3D /* TickerCell.swift */; };
 		1F57B4282919977700720836 /* EpisodeScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */; };
 		1F57B42A2919992600720836 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F57B4292919992600720836 /* NetworkManager.swift */; };
 		1F6CF79F291474D500AD28A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CF79E291474D500AD28A7 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1F541BBB291B063700479656 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		1F55F0722933DE5E00657F3D /* TickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCell.swift; sourceTree = "<group>"; };
 		1F57B4272919977700720836 /* EpisodeScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScheduleTableViewController.swift; sourceTree = "<group>"; };
 		1F57B4292919992600720836 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1F6CF79B291474D500AD28A7 /* TVmazeSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVmazeSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 			children = (
 				1F8D34EF291ABFBA00CE6666 /* ShowCell.swift */,
 				1F8D34E6291A4F8700CE6666 /* ScheduleCell.swift */,
+				1F55F0722933DE5E00657F3D /* TickerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				1F57B4282919977700720836 /* EpisodeScheduleTableViewController.swift in Sources */,
 				1F8D34EC291AB14100CE6666 /* ShowsCollectionViewController.swift in Sources */,
 				1F8D34F0291ABFBA00CE6666 /* ShowCell.swift in Sources */,
+				1F55F0732933DE5E00657F3D /* TickerCell.swift in Sources */,
 				1F8D34E7291A4F8700CE6666 /* ScheduleCell.swift in Sources */,
 				1F6CF7B52914756200AD28A7 /* EpisodeInfo.swift in Sources */,
 				1FC14641291C233200718B20 /* PreviewViewController.swift in Sources */,

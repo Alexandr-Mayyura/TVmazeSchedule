@@ -9,16 +9,34 @@ import UIKit
 
 class EpisodeScheduleTableViewController: UIViewController {
     
+    let teamMenu = ["Профиль",  "Игры", "Кит лист", "Калькулятор", "Чек лист", "Заказы"]
+    
     @IBOutlet var tableView: UITableView!
-
+    @IBOutlet var tickerCollectionView: UICollectionView!
+    
     private var spinnerView = UIActivityIndicatorView()
     private var episodeInfo: [EpisodeInfo] = []
+    private var isOn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 95
         showSpinner(in: tableView)
         fetchEpisodeSchedule()
+        tickerCollectionView.dataSource = self
+        tickerCollectionView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isOn = true
+        startScrolling()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+       isOn = false
     }
 
     // MARK: - Navigation
@@ -39,12 +57,24 @@ class EpisodeScheduleTableViewController: UIViewController {
 
         view.addSubview(spinnerView)
     }
+    
+    
+    private  func startScrolling(){
+        if isOn == true {
+            let positionX = tickerCollectionView.contentOffset.x + 1
+            UIView.animate(withDuration: 0.03, delay: 0, options: .curveEaseInOut, animations: { [weak self]() -> Void in
+                self?.tickerCollectionView.contentOffset = CGPoint(x: positionX, y: 0)
+            }) { [weak self] _ in
+                self?.startScrolling()
+            }
+        }
+    }
 }
 
-// MARK: - Table view data source
+// MARK: - TableView data source
 extension EpisodeScheduleTableViewController: UITableViewDataSource {
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        episodeInfo.count
+         episodeInfo.count
     }
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,11 +86,34 @@ extension EpisodeScheduleTableViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - Table view delegate
+// MARK: - TableView delegate
 extension EpisodeScheduleTableViewController: UITableViewDelegate {
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "detailEpisodeSegue", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - CollectionView data source
+extension EpisodeScheduleTableViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        episodeInfo.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tickerCell", for: indexPath)
+        guard let cell = cell as? TickerCell else { return UICollectionViewCell() }
+        let episode = episodeInfo[indexPath.item]
+        cell.configure(with: episode)
+        return cell
+    }
+    
+}
+
+// MARK: - CollectionView Delegate Flow Layout
+extension EpisodeScheduleTableViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: tickerCollectionView.bounds.width, height: tickerCollectionView.bounds.height)
     }
 }
 
@@ -72,6 +125,7 @@ extension EpisodeScheduleTableViewController {
             case .success(let schedule):
                 self?.episodeInfo = schedule
                 self?.tableView.reloadData()
+                self?.tickerCollectionView.reloadData()
                 self?.spinnerView.stopAnimating()
             case .failure(let error):
                 print(error.localizedDescription)
