@@ -29,7 +29,6 @@ https://api.tvmaze.com/schedule  <br/>https://api.tvmaze.com/shows<br/>
 ![IOS](https://img.shields.io/badge/-iOS-blue)
 ![KINGFISHER](https://img.shields.io/badge/-KINGFISHER-blue)
 ![ALAMOFIRE](https://img.shields.io/badge/-ALAMOFIRE-orange)
-![REALM](https://img.shields.io/badge/-REALM-blueviolet)
 
 ##### IOS version: 
 15.5<br/>
